@@ -8,15 +8,18 @@
 	- unblock the UI; 
 	- use [async and await](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx "http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx") keywords; 
 	- manage data by using [concurrent collections](http://msdn.microsoft.com/en-us/library/dd997305.aspx "http://msdn.microsoft.com/en-us/library/dd997305.aspx")
+
 ###Manage multithreading###
 - [Synchronize resources](http://msdn.microsoft.com/en-us/library/z8chs7ft.aspx "http://msdn.microsoft.com/en-us/library/z8chs7ft.aspx"); 
 - implement [locking](https://msdn.microsoft.com/en-us/library/mt679037.aspx "https://msdn.microsoft.com/en-us/library/mt679037.aspx"); 
 - [cancel a long-running task](http://msdn.microsoft.com/en-us/library/dd997396.aspx "http://msdn.microsoft.com/en-us/library/dd997396.aspx"); 
 - implement [thread-safe methods](https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx "https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx") to handle [race conditions](https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx "https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx")
+
 ###Implement program flow###
 - Iterate across collection and array items; 
 - program decisions by using switch statements, if/then, and operators; 
 - evaluate expressions
+
 ###Create and implement events and callbacks###
 - Create event handlers; 
 - subscribe to and unsubscribe from events; 
@@ -24,6 +27,7 @@
 - create delegates; 
 - lambda expressions; 
 - anonymous methods
+
 ###Implement exception handling###
 - Handle exception types (SQL exceptions, network exceptions, communication exceptions, network timeout exceptions); 
 - catch typed vs. base exceptions; 
@@ -31,6 +35,7 @@
 - throw exceptions; 
 - determine when to rethrow vs. throw; 
 - create custom exceptions
+
 ###Preparation resources###
 - [Parallel Computing](http://msdn.microsoft.com/en-gb/concurrency/default.aspx "http://msdn.microsoft.com/en-gb/concurrency/default.aspx")
 - [Asynchronous programming with Async and Await (C# and Visual Basic)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx "http://msdn.microsoft.com/library/vstudio/hh191443.aspx")
@@ -39,7 +44,9 @@
 - [Selection statements (C# reference)](http://msdn.microsoft.com/library/vstudio/676s4xab.aspx "http://msdn.microsoft.com/library/vstudio/676s4xab.aspx")
 
 ##Create and use types (25–30%)##
+
 ###Create types###
+
 - Create value types (structs, enum), reference types, generic types, constructors, static variables, methods, classes, extension methods, optional and named parameters, and indexed properties; create overloaded and overriden methods
 - Consume types
 	- Box or unbox to convert between value types; cast types; convert types; handle dynamic types; ensure interoperability with unmanaged code, for example, dynamic keyword
@@ -49,6 +56,7 @@
 - Design and implement an interface; inherit from a base class; create and implement classes based on the IComparable, IEnumerable, IDisposable, and IUnknown interfaces
 - Find, execute, and create types at runtime by using reflection
 - Create and apply attributes; read attributes; generate code at runtime by using CodeDom and lambda expressions; - - use types from the System.Reflection namespace (Assembly, PropertyInfo, MethodInfo, Type)
+
 ###Manage the object life cycle###
 Manage unmanaged resources; implement IDisposable, including interaction with finalization; manage IDisposable by using the Using statement; manage finalization and garbage collection
 Manipulate strings
