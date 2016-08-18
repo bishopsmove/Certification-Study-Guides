@@ -7,8 +7,8 @@ This is not a completely exhaustive list of resource material but will, hopefull
 
 ## Certifications Covered ##
 
-- [Amazon](/amazon)
-	- [AWS](/amazon/aws)
+- [Amazon](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Amazon)
+	- [AWS](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Amazon/AWS)
 - [Microsoft](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft)
 	- [MCSD](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD)
 		- [70-483 Programming in C#](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD/70-483.CSharp)
