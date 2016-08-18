@@ -3,7 +3,8 @@
 
 
 - Use the [Task Parallel library](http://msdn.microsoft.com/en-us/library/dd460717.aspx "http://msdn.microsoft.com/en-us/library/dd460717.aspx") ([ParallelFor](http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.for.aspx "http://msdn.microsoft.com/en-us/library/system.threading.tasks.parallel.for.aspx"), [Plinq](http://msdn.microsoft.com/en-us/library/dd997425.aspx "http://msdn.microsoft.com/en-us/library/dd997425.aspx"), [Tasks](http://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx "http://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx")); 
-	- create [continuation tasks](http://msdn.microsoft.com/en-us/library/ee372288.aspx "http://msdn.microsoft.com/en-us/library/ee372288.aspx"); 
+	- create [continuation tasks](http://msdn.microsoft.com/en-us/library/ee372288.aspx "http://msdn.microsoft.com/en-us/library/ee372288.aspx");
+	- Use TaskCreationOptions to manage nested\child task attachments
 	- spawn threads by using [ThreadPool](http://msdn.microsoft.com/en-us/library/h4732ks0.aspx "http://msdn.microsoft.com/en-us/library/h4732ks0.aspx"); 
 	- unblock the UI; 
 	- use [async and await](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx "http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx") keywords; 
@@ -101,7 +102,12 @@
 
 ###Perform symmetric and asymmetric encryption
 
-- Choose an appropriate encryption algorithm; 
+- Choose an appropriate encryption algorithm
+	- Algorithms:
+		- Symmetric cipher: [AES-256](http://msdn.microsoft.com/en-us/library/system.security.cryptography.aesmanaged.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.aesmanaged.aspx")
+		- Assymetric cipher: [RSA (with 4096-bit key)](http://msdn.microsoft.com/en-us/library/system.security.cryptography.rsacryptoserviceprovider.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.rsacryptoserviceprovider.aspx")
+		- Hash: [SHA-512](http://msdn.microsoft.com/en-us/library/system.security.cryptography.sha512.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.sha512.aspx")
+		- Message Authentication Code: [HMAC with SHA-512](http://msdn.microsoft.com/en-us/library/system.security.cryptography.hmacsha512.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.hmacsha512.aspx")
 - manage and create certificates; 
 - implement key management; 
 - implement the System.Security namespace; 
@@ -122,6 +128,8 @@
 - [signtool.exe](https://msdn.microsoft.com/en-us/library/8s9b9yaz(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/8s9b9yaz(v=vs.110).aspx")
 - [gacutil.exe](https://msdn.microsoft.com/en-us/library/ex0ss12c(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ex0ss12c(v=vs.110).aspx")
 - [MDbg.exe](https://msdn.microsoft.com/en-us/library/ms229861(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms229861(v=vs.110).aspx")
+- [Makecert.exe (deprecated)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx "https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx") - x.509 certificate creation tool
+- [New-SelfSignedCertificate (PowerShell commandlet)](https://technet.microsoft.com/library/hh848633 "https://technet.microsoft.com/library/hh848633")
 
 ###Debug an application
 
