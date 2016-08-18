@@ -10,5 +10,5 @@ This is not a completely exhaustive list of resource material but will, hopefull
 - [Amazon](/amazon)
 	- [AWS](/amazon/aws)
 - [Microsoft](/microsoft)
-	- [MCSD](/microsoft/mcsd)
+	- [MCSD](/tree/microsoft/mcsd)
 		- [70-483 Programming in C#](/microsoft/mcsd/70-483.CSharp)
