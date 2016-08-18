@@ -66,31 +66,51 @@ Types (C# programming guide)
 Classes and structs (C# programming guide)
 Object-oriented programming (C# and Visual Basic)
 
-Debug applications and implement security (25–30%)
-Validate application input
+##Debug applications and implement security (25–30%)
+###Validate application input
+
 Validate JSON data; data collection types; manage data integrity; evaluate a regular expression to validate the input format; use built-in functions to validate data type and content out of scope: writing regular expressions
 Perform symmetric and asymmetric encryption
 Choose an appropriate encryption algorithm; manage and create certificates; implement key management; implement the System.Security namespace; hashing data; encrypt streams
-Manage assemblies
-Version assemblies; sign assemblies using strong names; implement side-by-side hosting; put an assembly in the global assembly cache; create a WinMD assembly
-Debug an application
+
+###Manage assemblies
+- Version assemblies; 
+- sign assemblies using strong names; 
+- implement side-by-side hosting; 
+- put an assembly in the global assembly cache; 
+- create a WinMD assembly
+
+####Be familiar with the following tools
+
+- sn.exe
+- al.exe
+- signcode.exe
+- gacutil.exe
+- cordbg.exe
+
+###Debug an application
 Create and manage compiler directives; choose an appropriate build type; manage programming database files and symbols
-Implement diagnostics in an application
+
+###Implement diagnostics in an application
 Implement logging and tracing; profiling applications; create and monitor performance counters; write to the event log
 Preparation resources
 Validating data
 .NET Framework regular expressions
 
-Implement data access (25–30%)
-Perform I/O operations
+##Implement data access (25–30%)
+###Perform I/O operations
+
 Read and write files and streams; read and write from the network by using classes in the System.Net namespace; implement asynchronous I/O operations
 Consume data
 Retrieve data from a database; update data in a database; consume JSON and XML data; retrieve data by using web services
-Query and manipulate data and objects by using LINQ
+
+###Query and manipulate data and objects by using LINQ
 Query data by using operators (projection, join, group, take, skip, aggregate); create method-based LINQ queries; query data by using query comprehension syntax; select data by using anonymous types; force execution of a query; read, filter, create, and modify data structures by using LINQ to XML
-Serialize and deserialize data
+
+###Serialize and deserialize data
 Serialize and deserialize data by using binary serialization, custom serialization, XML Serializer, JSON Serializer, and Data Contract Serializer
-Store data in and retrieve data from collections
+
+###Store data in and retrieve data from collections
 Store and retrieve data by using dictionaries, arrays, lists, sets, and queues; choose a collection type; initialize a collection; add and remove items from a collection; use typed vs. non-typed collections; implement custom collections; implement collection interfaces
 Preparation resources
 File system and the registry (C# programming guide)
