@@ -41,7 +41,9 @@
 - [Asynchronous programming with Async and Await (C# and Visual Basic)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx "http://msdn.microsoft.com/library/vstudio/hh191443.aspx")
 - [Simplifying Asynchronous Programming in C#](http://geekswithblogs.net/MarkPearl/archive/2011/10/11/simplifying-asynchronous-programming-in-c.aspx "http://geekswithblogs.net/MarkPearl/archive/2011/10/11/simplifying-asynchronous-programming-in-c.aspx")
 - [Threading (C# and Visual Basic)](http://msdn.microsoft.com/library/ms173178.aspx "http://msdn.microsoft.com/library/ms173178.aspx")
+- [Managed Threading Best Practices](https://msdn.microsoft.com/en-us/library/1c9txz50(v=vs.140).aspx "https://msdn.microsoft.com/en-us/library/1c9txz50(v=vs.140).aspx")
 - [Selection statements (C# reference)](http://msdn.microsoft.com/library/vstudio/676s4xab.aspx "http://msdn.microsoft.com/library/vstudio/676s4xab.aspx")
+
 
 ##Create and use types (25–30%)##
 
@@ -49,13 +51,22 @@
 
 - Create value types (structs, enum), reference types, generic types, constructors, static variables, methods, classes, extension methods, optional and named parameters, and indexed properties; create overloaded and overriden methods
 - Consume types
-	- Box or unbox to convert between value types; cast types; convert types; handle dynamic types; ensure interoperability with unmanaged code, for example, dynamic keyword
+	- Box or unbox to convert between value types; 
+	- cast types; 
+	- convert types; 
+	- handle dynamic types; 
+	- ensure interoperability with unmanaged code, for example, dynamic keyword
 - Enforce encapsulation
 	- Enforce encapsulation by using properties, by using accessors (public, private, protected), and by using explicit interface implementation
 - Create and implement a class hierarchy
-- Design and implement an interface; inherit from a base class; create and implement classes based on the IComparable, IEnumerable, IDisposable, and IUnknown interfaces
+- Design and implement an interface; 
+- inherit from a base class; 
+- create and implement classes based on the IComparable, IEnumerable, IDisposable, and IUnknown interfaces
 - Find, execute, and create types at runtime by using reflection
-- Create and apply attributes; read attributes; generate code at runtime by using CodeDom and lambda expressions; - - use types from the System.Reflection namespace (Assembly, PropertyInfo, MethodInfo, Type)
+- Create and apply attributes; 
+- read attributes; 
+- generate code at runtime by using CodeDom and lambda expressions;
+- use types from the System.Reflection namespace (Assembly, PropertyInfo, MethodInfo, Type)
 
 ###Manage the object life cycle###
 
@@ -63,6 +74,8 @@
 - implement IDisposable, including interaction with finalization; 
 - manage IDisposable by using the Using statement; 
 - manage finalization and garbage collection
+	- Utilize a [WeakReference](https://msdn.microsoft.com/en-us/library/ms404247(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms404247(v=vs.110).aspx") object
+		- Understand the [difference](https://msdn.microsoft.com/en-us/library/ms404247(v=vs.110).aspx#Anchor_0 "https://msdn.microsoft.com/en-us/library/ms404247(v=vs.110).aspx#Anchor_0") between a short WeakReference and a long WeakReference
 
 ###Manipulate strings
 
@@ -72,9 +85,10 @@
 - format strings
 
 ####Preparation resources
-Types (C# programming guide)
-Classes and structs (C# programming guide)
-Object-oriented programming (C# and Visual Basic)
+
+- Types (C# programming guide)
+- Classes and structs (C# programming guide)
+- Object-oriented programming (C# and Visual Basic)
 
 ##Debug applications and implement security (25–30%)
 ###Validate application input
@@ -123,8 +137,9 @@ Object-oriented programming (C# and Visual Basic)
 - write to the event log
 
 ####Preparation resources
-Validating data
-.NET Framework regular expressions
+
+- Validating data
+- .NET Framework regular expressions
 
 ##Implement data access (25–30%)
 ###Perform I/O operations
@@ -169,6 +184,6 @@ Validating data
 
 ####Preparation resources
 
-File system and the registry (C# programming guide)
-Connecting to data in Visual Studio
-Editing data in your application
+- File system and the registry (C# programming guide)
+- Connecting to data in Visual Studio
+- Editing data in your application
