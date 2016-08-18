@@ -9,6 +9,6 @@ This is not a completely exhaustive list of resource material but will, hopefull
 
 - [Amazon](/amazon)
 	- [AWS](/amazon/aws)
-- [Microsoft](/microsoft)
-	- [MCSD](/tree/microsoft/mcsd)
-		- [70-483 Programming in C#](/microsoft/mcsd/70-483.CSharp)
+- [Microsoft](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft)
+	- [MCSD](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD)
+		- [70-483 Programming in C#](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD/70-483.CSharp)
