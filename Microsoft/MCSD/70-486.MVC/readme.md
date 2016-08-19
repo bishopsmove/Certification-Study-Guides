@@ -11,8 +11,12 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Plan the application layers
 
-- Plan data access; plan for separation of concerns; 
-- appropriate use of models, views, and controllers; 
+- Plan data access; 
+- plan for separation of concerns; 
+- appropriate use of:
+	- models, 
+	- views, 
+	- controllers 
 - choose between client-side and server side processing; 
 - design for scalability
 
