@@ -13,3 +13,4 @@ This is not a completely exhaustive list of resource material but will, hopefull
 	- [MCSD](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD)
 		- [70-483 Programming in C#](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD/70-483.CSharp)
 		- [70-486 Developing ASP.NET MVC Web Applications](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD/70-486.MVC)
+		- [70-487 Developing Windows Azure and Web Services](https://github.com/bishopsmove/Certification-Study-Guides/tree/master/Microsoft/MCSD/70-487.Azure)
