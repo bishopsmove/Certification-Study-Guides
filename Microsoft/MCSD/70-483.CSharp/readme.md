@@ -25,6 +25,15 @@ Anything else listed additionally is based on my own observations. Links listed 
 - [cancel a long-running task](http://msdn.microsoft.com/en-us/library/dd997396.aspx "http://msdn.microsoft.com/en-us/library/dd997396.aspx"); 
 - implement [thread-safe methods](https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx "https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx") to handle [race conditions](https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx "https://msdn.microsoft.com/en-us/library/a8544e2s(v=vs.120).aspx")
 
+####Resources
+- [How to synchronize access to a shared resource [...]](http://support.microsoft.com/kb/816161 "http://support.microsoft.com/kb/816161")
+- [Thread Syncronization](http://msdn.microsoft.com/en-us/library/ms173179.aspx "http://msdn.microsoft.com/en-us/library/ms173179.aspx")
+- [Parallel Programming: Task Cancellation (MSDN Blog post)](http://blogs.msdn.com/b/csharpfaq/archive/2010/07/19/parallel-programming-task-cancellation.aspx "http://blogs.msdn.com/b/csharpfaq/archive/2010/07/19/parallel-programming-task-cancellation.aspx")
+- [Cancel an Async Task or a List of Tasks (C# and Visual Basic)](http://msdn.microsoft.com/en-us/library/vstudio/jj155759.aspx "http://msdn.microsoft.com/en-us/library/vstudio/jj155759.aspx")
+- [Thread safe method in c# (MSDN Forum thread)](http://social.msdn.microsoft.com/Forums/vstudio/en-US/9639d953-b4d2-4b0b-a584-1c3c70c93323/thread-safe-method-in-c "http://social.msdn.microsoft.com/Forums/vstudio/en-US/9639d953-b4d2-4b0b-a584-1c3c70c93323/thread-safe-method-in-c")
+- [Managed Threading Best Practices](http://msdn.microsoft.com/en-us/library/1c9txz50.aspx "http://msdn.microsoft.com/en-us/library/1c9txz50.aspx")
+- [Walkthrough: Authoring a Simple Multithreaded Component with Visual C#](http://msdn.microsoft.com/en-us/library/48cfdff6(v=vs.71).aspx "http://msdn.microsoft.com/en-us/library/48cfdff6(v=vs.71).aspx")
+
 ###Implement program flow###
 - Iterate across collection and array items; 
 - program decisions by using switch statements, if/then, and operators; 
@@ -50,8 +59,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 - [Parallel Computing](http://msdn.microsoft.com/en-gb/concurrency/default.aspx "http://msdn.microsoft.com/en-gb/concurrency/default.aspx")
 - [Asynchronous programming with Async and Await (C# and Visual Basic)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx "http://msdn.microsoft.com/library/vstudio/hh191443.aspx")
 - [Simplifying Asynchronous Programming in C#](http://geekswithblogs.net/MarkPearl/archive/2011/10/11/simplifying-asynchronous-programming-in-c.aspx "http://geekswithblogs.net/MarkPearl/archive/2011/10/11/simplifying-asynchronous-programming-in-c.aspx")
-- [Threading (C# and Visual Basic)](http://msdn.microsoft.com/library/ms173178.aspx "http://msdn.microsoft.com/library/ms173178.aspx")
-- [Managed Threading Best Practices](https://msdn.microsoft.com/en-us/library/1c9txz50(v=vs.140).aspx "https://msdn.microsoft.com/en-us/library/1c9txz50(v=vs.140).aspx")
+- [Threading (C# and Visual Basic)](http://msdn.microsoft.com/library/ms173178(v=vs.110).aspx "http://msdn.microsoft.com/library/ms173178(v=vs.110).aspx")
+- [Managed Threading Best Practices](https://msdn.microsoft.com/en-us/library/1c9txz50(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/1c9txz50(v=vs.140).aspx")
 - [Selection statements (C# reference)](http://msdn.microsoft.com/library/vstudio/676s4xab.aspx "http://msdn.microsoft.com/library/vstudio/676s4xab.aspx")
 
 
@@ -59,13 +68,14 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Create types###
 
-- Create value types (structs, enum), reference types, generic types, constructors, static variables, methods, classes, extension methods, optional and named parameters, and indexed properties; create overloaded and overriden methods
+- Create value types (structs, enum), reference types, generic types, constructors, static variables, methods, classes, extension methods, optional and named parameters, and indexed properties; 
+- Create overloaded and overriden methods
 - Consume types
-	- Box or unbox to convert between value types; 
+	- [Box or unbox](http://msdn.microsoft.com/en-us/library/yz2be5wk(v=vs.110).aspx "http://msdn.microsoft.com/en-us/library/yz2be5wk(v=vs.110).aspx") to convert between value types; 
 	- cast types; 
 	- convert types; 
-	- handle dynamic types; 
-	- ensure interoperability with unmanaged code, for example, dynamic keyword
+	- handle [dynamic types](http://msdn.microsoft.com/en-us/library/dd264736(v=vs.110).aspx "http://msdn.microsoft.com/en-us/library/dd264736(v=vs.110).aspx"); 
+	- ensure [interoperability with unmanaged code](https://msdn.microsoft.com/en-us/library/sd10k43k(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/sd10k43k(v=vs.110).aspx"), for example, dynamic keyword
 - Enforce encapsulation
 	- Enforce encapsulation by using properties, by using accessors (public, private, protected), and by using explicit interface implementation
 - Create and implement a class hierarchy
@@ -96,9 +106,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ####Preparation resources
 
-- Types (C# programming guide)
-- Classes and structs (C# programming guide)
-- Object-oriented programming (C# and Visual Basic)
+- [Types (C# programming guide)](http://msdn.microsoft.com/library/ms173104.aspx "http://msdn.microsoft.com/library/ms173104.aspx")
+- [Classes and structs (C# programming guide)](http://msdn.microsoft.com/library/vstudio/ms173109.aspx "http://msdn.microsoft.com/library/vstudio/ms173109.aspx")
+- [Object-oriented programming (C# and Visual Basic)](http://msdn.microsoft.com/library/dd460654.aspx "http://msdn.microsoft.com/library/dd460654.aspx")
 
 ##Debug applications and implement security (25–30%)
 ###Validate application input
@@ -114,7 +124,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Choose an appropriate encryption algorithm
 	- Algorithms:
 		- Symmetric cipher: [AES-256](http://msdn.microsoft.com/en-us/library/system.security.cryptography.aesmanaged.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.aesmanaged.aspx")
-		- Assymetric cipher: [RSA (with 4096-bit key)](http://msdn.microsoft.com/en-us/library/system.security.cryptography.rsacryptoserviceprovider.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.rsacryptoserviceprovider.aspx")
+		- Asymetric cipher: [RSA (with 4096-bit key)](http://msdn.microsoft.com/en-us/library/system.security.cryptography.rsacryptoserviceprovider.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.rsacryptoserviceprovider.aspx")
 		- Hash: [SHA-512](http://msdn.microsoft.com/en-us/library/system.security.cryptography.sha512.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.sha512.aspx")
 		- Message Authentication Code: [HMAC with SHA-512](http://msdn.microsoft.com/en-us/library/system.security.cryptography.hmacsha512.aspx "http://msdn.microsoft.com/en-us/library/system.security.cryptography.hmacsha512.aspx")
 - manage and create certificates; 
@@ -148,10 +158,10 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Implement diagnostics in an application
 
-- Implement logging and tracing; 
+- Implement [logging](https://support.microsoft.com/en-us/kb/307024 "https://support.microsoft.com/en-us/kb/307024") and [tracing](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.diagnostics.trace(v=vs.110).aspx"); 
 - profiling applications; 
 - create and monitor performance counters; 
-- write to the event log
+- write to the [event log](https://msdn.microsoft.com/en-us/library/system.diagnostics.eventlog(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.diagnostics.eventlog(v=vs.110).aspx")
 
 ####Preparation resources
 
@@ -174,8 +184,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Query and manipulate data and objects by using LINQ
 
-- Query data by using operators (projection, join, group, take, skip, aggregate); 
-- create method-based LINQ queries; 
+- Query data by using [operators](https://msdn.microsoft.com/en-us/library/bb397676.aspx "https://msdn.microsoft.com/en-us/library/bb397676.aspx") (projection, join, group, take, skip, aggregate); 
+- create [method-based LINQ queries](https://msdn.microsoft.com/en-us/library/mt693056.aspx "https://msdn.microsoft.com/en-us/library/mt693056.aspx"); 
 - query data by using query comprehension syntax; 
 - select data by using anonymous types; 
 - force execution of a query; 
