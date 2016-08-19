@@ -3,7 +3,7 @@
 This guide is based, in large part, on the skills summary lists located here:
 
 - [Microsoft Learning Portal](https://www.microsoft.com/en-us/learning/exam-70-486.aspx "https://www.microsoft.com/en-us/learning/exam-70-486.aspx")
-- [Microsoft Born To Learn](https://borntolearn.mslearn.net/certification/p/wiki?es=sharePointApp&ec=486 "https://borntolearn.mslearn.net/certification/p/wiki?es=sharePointApp&ec=486") Training and Certification Community Wiki site
+- [Microsoft Born To Learn](https://borntolearn.mslearn.net/certification/p/wiki?es=webApp&ec=486 "https://borntolearn.mslearn.net/certification/p/wiki?es=webApp&ec=486") Training and Certification Community Wiki site
 
 Anything else listed additionally is based on my own observations. Links listed here may be subject to copyright protection and access to such is up to the discretion of the authors\owners to which they pertain.
 
