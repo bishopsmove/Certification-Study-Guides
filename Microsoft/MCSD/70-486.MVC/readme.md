@@ -68,9 +68,9 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ####Preparation resources
 
-- Entity Framework Development workflows
-- DataAdapters and DataReaders
-- ASP.NET State Management overview
+- [Entity Framework Development workflows](http://msdn.microsoft.com/en-US/data/jj590134 "http://msdn.microsoft.com/en-US/data/jj590134")
+- [DataAdapters and DataReaders](http://msdn.microsoft.com/en-us/library/ms254931(v=vs.110).aspx "http://msdn.microsoft.com/en-us/library/ms254931(v=vs.110).aspx")
+- [ASP.NET State Management overview](http://msdn.microsoft.com/en-us/library/75x4ha6s(v=vs.100).aspx "http://msdn.microsoft.com/en-us/library/75x4ha6s(v=vs.100).aspx")
 
 ##Design the user experience (20-25%)
 
@@ -108,9 +108,9 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ####Preparation resources
 
-- Build a better mobile browsing experience
-- Display modes
-- Building Modern Web Apps Jump Start
+- [Build a better mobile browsing experience](http://msdn.microsoft.com/en-us/magazine/hh288079.aspx "http://msdn.microsoft.com/en-us/magazine/hh288079.aspx")
+- [Display modes](http://www.asp.net/whitepapers/mvc4-release-notes#_Toc303253810 "http://www.asp.net/whitepapers/mvc4-release-notes#_Toc303253810")
+- [Building Modern Web Apps Jump Start](https://mva.microsoft.com/training-courses/building-modern-web-apps-jump-start "https://mva.microsoft.com/training-courses/building-modern-web-apps-jump-start")
 
 ##Develop the user experience (15-20%)
 
@@ -157,9 +157,9 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ####Preparation resources
 
-- Search Engine Optimization Toolkit
-- GlobalizationSection Class
-- FormCollection Class
+- [Search Engine Optimization Toolkit](http://www.iis.net/downloads/microsoft/search-engine-optimization-toolkit "http://www.iis.net/downloads/microsoft/search-engine-optimization-toolkit")
+- [GlobalizationSection Class](http://msdn.microsoft.com/en-us/library/system.web.configuration.globalizationsection.aspx "http://msdn.microsoft.com/en-us/library/system.web.configuration.globalizationsection.aspx")
+- [FormCollection Class](http://msdn.microsoft.com/en-us/library/system.web.mvc.formcollection(v=vs.118).aspx "http://msdn.microsoft.com/en-us/library/system.web.mvc.formcollection(v=vs.118).aspx")
 
 ##Troubleshoot and debug web applications (20-25%)
 
@@ -192,7 +192,7 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ####Preparation resources
 
-- Using shims to isolate your application from other assemblies for unit testing
+- [Using shims to isolate your application from other assemblies for unit testing](http://msdn.microsoft.com/en-us/library/hh549176(v=vs.120).aspx "http://msdn.microsoft.com/en-us/library/hh549176(v=vs.120).aspx")
 
 ##Design and implement security (20-25%)
 
@@ -236,6 +236,6 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ####Preparation resources
 
-- Introduction to ASP.NET Identity
-- Chapter 5: Authentication, authorization, and identities in WCF
-- Easy Web App Integration with Windows Azure Active Directory, ASP.NET & Visual Studio
+- [Introduction to ASP.NET Identity](http://www.asp.net/identity/overview/getting-started/introduction-to-aspnet-identity "http://www.asp.net/identity/overview/getting-started/introduction-to-aspnet-identity")
+- [Chapter 5: Authentication, authorization, and identities in WCF](http://msdn.microsoft.com/en-us/library/ff647503.aspx "http://msdn.microsoft.com/en-us/library/ff647503.aspx")
+- [Easy Web App Integration with Windows Azure Active Directory, ASP.NET & Visual Studio](http://blogs.technet.com/b/ad/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx "http://blogs.technet.com/b/ad/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx")
