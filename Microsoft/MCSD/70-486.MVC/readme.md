@@ -7,6 +7,14 @@ This guide is based, in large part, on the skills summary lists located here:
 
 Anything else listed additionally is based on my own observations. Links listed here may be subject to copyright protection and access to such is up to the discretion of the authors\owners to which they pertain.
 
+####Caveats
+
+This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, as well as the general functionality of MVC on ASP.Net, but be aware of the MVC 5.x distinctions and how VS2013 is expected to be utilized.
+
+####Additional Resources
+
+- [PluralSight "Learning Path"](https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486 "https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486") for 70-486
+
 ##Design the application architecture (15-20%)
 
 ###Plan the application layers
