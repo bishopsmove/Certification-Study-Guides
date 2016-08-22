@@ -26,7 +26,10 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 			1. Entity Framework
 			2. NHibernate
 			3. Linq-to-SQL
-		- Roll your own DAL
+		- Roll your own DAL (using ADO.Net, etc.)
+	- [EFMVC – ASP.NET MVC 4, Entity Framework 5 Code First and Windows Azure (Demo App)](http://efmvc.codeplex.com/ "http://efmvc.codeplex.com/")
+	- Understand the difference between Database-First and Code-First design strategies
+		- Data annotations for code first ([validation](http://labs.bjfocus.co.uk/2014/03/validation-attributes-in-code-first/ "http://labs.bjfocus.co.uk/2014/03/validation-attributes-in-code-first/") and [database related](http://labs.bjfocus.co.uk/2014/03/database-related-attributes-in-code-first/ "http://labs.bjfocus.co.uk/2014/03/database-related-attributes-in-code-first/"))
 - plan for separation of concerns; 
 - appropriate use of:
 	- models, 
