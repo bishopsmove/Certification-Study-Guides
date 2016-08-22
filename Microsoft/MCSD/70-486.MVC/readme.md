@@ -23,14 +23,16 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 	- [Data Access Practices Using Microsoft .Net: A Nerdly Comparison](https://msdn.microsoft.com/en-us/data/ff707264.aspx "https://msdn.microsoft.com/en-us/data/ff707264.aspx")
 	- Based on the exam ref prep book, you have a choice between using:
 		- an ORM (Object/Relational Mapper):
-			1. Entity Framework
-			2. NHibernate
-			3. Linq-to-SQL
-		- Roll your own DAL (using ADO.Net, etc.)
+			1. [Entity Framework](http://msdn.microsoft.com/en-us/data/ef.aspx "http://msdn.microsoft.com/en-us/data/ef.aspx")
+			2. [NHibernate](http://nhibernate.info/ "http://nhibernate.info/")
+			3. [Linq-to-SQL](https://msdn.microsoft.com/en-us/library/bb425822.aspx "https://msdn.microsoft.com/en-us/library/bb425822.aspx")
+		- Roll your own DAL (using [ADO.Net](https://msdn.microsoft.com/en-us/library/e80y5yhx(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/e80y5yhx(v=vs.110).aspx"), etc.)
 	- [EFMVC – ASP.NET MVC 4, Entity Framework 5 Code First and Windows Azure (Demo App)](http://efmvc.codeplex.com/ "http://efmvc.codeplex.com/")
 	- Understand the difference between Database-First and Code-First design strategies
 		- Data annotations for code first ([validation](http://labs.bjfocus.co.uk/2014/03/validation-attributes-in-code-first/ "http://labs.bjfocus.co.uk/2014/03/validation-attributes-in-code-first/") and [database related](http://labs.bjfocus.co.uk/2014/03/database-related-attributes-in-code-first/ "http://labs.bjfocus.co.uk/2014/03/database-related-attributes-in-code-first/"))
-- plan for separation of concerns; 
+- plan for separation of concerns
+	- [Wikipedia definition](https://en.wikipedia.org/wiki/Separation_of_concerns "https://en.wikipedia.org/wiki/Separation_of_concerns")
+	- [Intro the MVC architecture and SoC](http://www.c-sharpcorner.com/UploadFile/1492b1/introduction-to-mvc-architecture-and-separation-of-concerns/ "http://www.c-sharpcorner.com/UploadFile/1492b1/introduction-to-mvc-architecture-and-separation-of-concerns/")
 - appropriate use of:
 	- models, 
 	- views, 
