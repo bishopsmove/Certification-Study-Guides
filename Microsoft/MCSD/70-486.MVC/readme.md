@@ -19,7 +19,14 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ###Plan the application layers
 
-- Plan data access; 
+- Plan data access
+	- [Data Access Practices Using Microsoft .Net: A Nerdly Comparison](https://msdn.microsoft.com/en-us/data/ff707264.aspx "https://msdn.microsoft.com/en-us/data/ff707264.aspx")
+	- Based on the exam ref prep book, you have a choice between using:
+		- an ORM (Object/Relational Mapper):
+			1. Entity Framework
+			2. NHibernate
+			3. Linq-to-SQL
+		- Roll your own DAL
 - plan for separation of concerns; 
 - appropriate use of:
 	- models, 
@@ -71,6 +78,7 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 - [Entity Framework Development workflows](http://msdn.microsoft.com/en-US/data/jj590134 "http://msdn.microsoft.com/en-US/data/jj590134")
 - [DataAdapters and DataReaders](http://msdn.microsoft.com/en-us/library/ms254931(v=vs.110).aspx "http://msdn.microsoft.com/en-us/library/ms254931(v=vs.110).aspx")
 - [ASP.NET State Management overview](http://msdn.microsoft.com/en-us/library/75x4ha6s(v=vs.100).aspx "http://msdn.microsoft.com/en-us/library/75x4ha6s(v=vs.100).aspx")
+- [Why use the Entity Framework? Yeah, why exactly?](http://weblogs.asp.net/fbouma/why-use-the-entity-framework-yeah-why-exactly "http://weblogs.asp.net/fbouma/why-use-the-entity-framework-yeah-why-exactly")
 
 ##Design the user experience (20-25%)
 
