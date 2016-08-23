@@ -14,6 +14,7 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 ####Additional Resources
 
 - [PluralSight "Learning Path"](https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486 "https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486") for 70-486
+- Being familiar with the [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design) "https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)") of OO programming and design will likely help with the material covered here
 
 ##Design the application architecture (15-20%)
 
@@ -30,6 +31,7 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 	- [EFMVC – ASP.NET MVC 4, Entity Framework 5 Code First and Windows Azure (Demo App)](http://efmvc.codeplex.com/ "http://efmvc.codeplex.com/")
 	- Understand the difference between Database-First and Code-First design strategies
 		- Data annotations for code first ([validation](http://labs.bjfocus.co.uk/2014/03/validation-attributes-in-code-first/ "http://labs.bjfocus.co.uk/2014/03/validation-attributes-in-code-first/") and [database related](http://labs.bjfocus.co.uk/2014/03/database-related-attributes-in-code-first/ "http://labs.bjfocus.co.uk/2014/03/database-related-attributes-in-code-first/"))
+	- Understand and implement the [Repository Pattern](https://codeteddy.com/2013/09/03/learning-mvc-part-5repository-pattern-in-mvc3-application-with-entity-framework/ "https://codeteddy.com/2013/09/03/learning-mvc-part-5repository-pattern-in-mvc3-application-with-entity-framework/")
 - plan for separation of concerns
 	- [Wikipedia definition](https://en.wikipedia.org/wiki/Separation_of_concerns "https://en.wikipedia.org/wiki/Separation_of_concerns")
 	- [Intro the MVC architecture and SoC](http://www.c-sharpcorner.com/UploadFile/1492b1/introduction-to-mvc-architecture-and-separation-of-concerns/ "http://www.c-sharpcorner.com/UploadFile/1492b1/introduction-to-mvc-architecture-and-separation-of-concerns/")
