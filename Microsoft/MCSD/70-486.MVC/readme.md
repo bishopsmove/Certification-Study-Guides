@@ -53,8 +53,10 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 
 ###Design and implement the Azure role life cycle
 
-- Identify and implement Start, Run, and Stop events; 
+- Identify and implement Start, Run, and Stop events
+	-  [Startup Lifecycle of Windows Azure Role](http://blog.syntaxc4.net/post/2011/04/13/Windows-Azure-Role-Startup-Life-Cycle.aspx "http://blog.syntaxc4.net/post/2011/04/13/Windows-Azure-Role-Startup-Life-Cycle.aspx")
 - identify startup tasks (IIS configuration [app pool], registry configuration, third-party tools)
+	- [How to configure and run startup tasks for a cloud service](https://azure.microsoft.com/en-us/documentation/articles/cloud-services-startup-tasks/ "https://azure.microsoft.com/en-us/documentation/articles/cloud-services-startup-tasks/")
 
 ###Configure state management
 
@@ -64,9 +66,12 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 - apply configuration settings in web.config file, 
 - implement sessionless state (for example, QueryString)
 
+#### Resources
+- [State Management Recommendations](https://msdn.microsoft.com/en-us/library/z1hkazw7(v=vs.120).aspx "https://msdn.microsoft.com/en-us/library/z1hkazw7(v=vs.120).aspx")
+
 ###Design a caching strategy
 
-- Implement page output caching (performance oriented), 
+- Implement [page output caching](http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs "http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs") (performance oriented), 
 - implement data caching, 
 - implement HTTP caching, 
 - implement Azure caching
