@@ -193,13 +193,14 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Serialize and deserialize data
 
-- Understand the XmlObjectSerializer class
-- Serialize and deserialize data by using:
-	- binary serialization 
-	- custom serialization 
-	- XML Serializer 
-	- JSON Serializer 
-	- Data Contract Serializer
+- Understand the [XmlObjectSerializer](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.xmlobjectserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.runtime.serialization.xmlobjectserializer(v=vs.110).aspx") class
+- [Serialize and deserialize](https://msdn.microsoft.com/en-us/library/mt656716.aspx "https://msdn.microsoft.com/en-us/library/mt656716.aspx") data by using:
+	- [binary serialization](http://www.diranieh.com/NETSerialization/BinarySerialization.htm "http://www.diranieh.com/NETSerialization/BinarySerialization.htm") 
+	- [custom/selective](http://www.diranieh.com/NETSerialization/BinarySerialization.htm "http://www.diranieh.com/NETSerialization/BinarySerialization.htm") serialization 
+	- [XML Serializer](https://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer.aspx "https://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer.aspx") 
+	- [JSON Serializer](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.json.datacontractjsonserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.runtime.serialization.json.datacontractjsonserializer(v=vs.110).aspx") 
+	- [Data Contract Serializer](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.datacontractserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.runtime.serialization.datacontractserializer(v=vs.110).aspx")
+	- [Javascript Serializer](https://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(v=vs.110).aspx")
 
 ###Store data in and retrieve data from collections
 
