@@ -35,18 +35,21 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 - plan for separation of concerns
 	- [Wikipedia definition](https://en.wikipedia.org/wiki/Separation_of_concerns "https://en.wikipedia.org/wiki/Separation_of_concerns")
 	- [Intro the MVC architecture and SoC](http://www.c-sharpcorner.com/UploadFile/1492b1/introduction-to-mvc-architecture-and-separation-of-concerns/ "http://www.c-sharpcorner.com/UploadFile/1492b1/introduction-to-mvc-architecture-and-separation-of-concerns/")
-- appropriate use of:
-	- models, 
-	- views, 
-	- controllers 
-- choose between client-side and server side processing; 
-- design for scalability
+- appropriate use of [MVC components](https://msdn.microsoft.com/en-us/library/dd381412(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/dd381412(v=vs.110).aspx"):
+	- [models](http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-model "http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-model"), 
+	- [views](http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-view "http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-view"), 
+	- [controllers](http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-controller "http://www.asp.net/mvc/overview/getting-started/introduction/adding-a-controller") 
+- choose between [client-side and server side](http://programmers.stackexchange.com/questions/138561/pros-cons-between-emphasizing-client-side-or-server-side-processing "http://programmers.stackexchange.com/questions/138561/pros-cons-between-emphasizing-client-side-or-server-side-processing") processing; 
+- design for scalability 
+	- via [async request handling](http://blog.stevensanderson.com/2008/04/05/improve-scalability-in-aspnet-mvc-using-asynchronous-requests/ "http://blog.stevensanderson.com/2008/04/05/improve-scalability-in-aspnet-mvc-using-asynchronous-requests/")
+	- for the [Database](http://programmers.stackexchange.com/a/117359 "http://programmers.stackexchange.com/a/117359")
 
 ###Design a distributed application
 
-- Design a hybrid application (on-premises versus off-premises, including Azure), 
-- plan for session management in a distributed environment, 
-- plan web farms
+- Design a hybrid application (on-premises versus off-premises, including [Azure](https://msdn.microsoft.com/en-us/library/hh871440.aspx "https://msdn.microsoft.com/en-us/library/hh871440.aspx"))
+	- [Cloud Hybrid Application Using Service Bus Relay](http://www.windowsazure.com/en-us/develop/net/tutorials/hybrid-solution/ "http://www.windowsazure.com/en-us/develop/net/tutorials/hybrid-solution/")
+- plan for [session management](http://msdn.microsoft.com/library/ms178586.aspx "http://msdn.microsoft.com/library/ms178586.aspx") in a distributed environment, 
+- plan [web farms](http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework "http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework")
 
 ###Design and implement the Azure role life cycle
 
