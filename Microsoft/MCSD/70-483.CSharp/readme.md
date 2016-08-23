@@ -198,7 +198,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- [binary serialization](http://www.diranieh.com/NETSerialization/BinarySerialization.htm "http://www.diranieh.com/NETSerialization/BinarySerialization.htm") 
 	- [custom/selective](http://www.diranieh.com/NETSerialization/BinarySerialization.htm "http://www.diranieh.com/NETSerialization/BinarySerialization.htm") serialization 
 	- [XML Serializer](https://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer.aspx "https://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer.aspx") 
-	- [JSON Serializer](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.json.datacontractjsonserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.runtime.serialization.json.datacontractjsonserializer(v=vs.110).aspx") 
+	- [JSON Serializer](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.json.datacontractjsonserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.runtime.serialization.json.datacontractjsonserializer(v=vs.110).aspx") (and NOT JSON.Net)
 	- [Data Contract Serializer](https://msdn.microsoft.com/en-us/library/system.runtime.serialization.datacontractserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.runtime.serialization.datacontractserializer(v=vs.110).aspx")
 	- [Javascript Serializer](https://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.web.script.serialization.javascriptserializer(v=vs.110).aspx")
 
