@@ -9,7 +9,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ####Caveats
 
-This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, as well as the general functionality of MVC on ASP.Net, but be aware of the MVC 5.x distinctions and how VS2013 is expected to be utilized.
+1. This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, as well as the general functionality of MVC on ASP.Net, but be aware of the MVC 5.x distinctions and how VS2013 is expected to be utilized.
+2. Where the guide mentions "Implement", be prepared to know common method and parameter usage involved with said technology or namespace.
+
 
 ####Additional Resources
 
@@ -72,7 +74,7 @@ This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, 
 ###Design a caching strategy
 
 - Implement [page output caching](http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs "http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs") (performance oriented), 
-- implement data caching, 
+- implement [data caching](https://msdn.microsoft.com/en-us/library/dd997357.aspx "https://msdn.microsoft.com/en-us/library/dd997357.aspx"), 
 - implement HTTP caching, 
 - implement Azure caching
 
