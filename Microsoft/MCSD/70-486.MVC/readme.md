@@ -75,13 +75,13 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Implement [page output caching](http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs "http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs") (performance oriented), 
 - implement [data caching](https://msdn.microsoft.com/en-us/library/dd997357.aspx "https://msdn.microsoft.com/en-us/library/dd997357.aspx"), 
-- implement HTTP caching, 
-- implement Azure caching
+- implement [HTTP caching](http://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/ "http://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/"), 
+- implement [Azure caching](https://blogs.msdn.microsoft.com/webdev/2013/11/30/instant-azure-caching-with-mvc/ "https://blogs.msdn.microsoft.com/webdev/2013/11/30/instant-azure-caching-with-mvc/")
 
 ###Design and implement a WebSocket strategy
 
-- Read and write string and binary data asynchronously (long-running data transfers), 
-- choose a connection loss strategy, 
+- [Read](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.receiveasync(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.receiveasync(v=vs.110).aspx") and [write](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.sendasync(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.sendasync(v=vs.110).aspx") string and binary data asynchronously (long-running data transfers), 
+- choose a [connection loss strategy](http://failedturing.blogspot.com/2014/11/microsoft-70-486-design-and-implement.html "http://failedturing.blogspot.com/2014/11/microsoft-70-486-design-and-implement.html"), 
 - decide a strategy for when to use WebSockets, 
 - implement SignalR
 
@@ -109,7 +109,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Implement client validation, 
 - use JavaScript and the DOM to control application behavior, 
-- extend objects by using prototypal inheritance, 
+- extend objects by using [prototypal inheritance](http://javascript.info/tutorial/inheritance "http://javascript.info/tutorial/inheritance"), 
 - use AJAX to make partial page updates, 
 - implement the UI by using JQuery
 
