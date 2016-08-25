@@ -54,7 +54,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - plan for [session management](http://msdn.microsoft.com/library/ms178586.aspx "http://msdn.microsoft.com/library/ms178586.aspx") in a distributed environment, 
 - plan [web farms](http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework "http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework")
 
-###Design and implement the Azure role life cycle
+###*Design and implement the Azure role life cycle
 
 - Identify and implement Start, Run, and Stop events
 	-  [Startup Lifecycle of Windows Azure Role](http://blog.syntaxc4.net/post/2011/04/13/Windows-Azure-Role-Startup-Life-Cycle.aspx "http://blog.syntaxc4.net/post/2011/04/13/Windows-Azure-Role-Startup-Life-Cycle.aspx")
@@ -127,7 +127,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - create a web application that runs across multiple browsers and mobile devices; 
 - enhance application behavior and style by using vendor-specific extensions, for example, CSS
 
-###Plan an adaptive UI layout
+###*Plan an adaptive UI layout
 
 - Plan for running applications in browsers on multiple devices (screen resolution, CSS, HTML), 
 - plan for mobile web applications
@@ -169,6 +169,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - ignore URL patterns, 
 - add custom route parameters, 
 - define areas
+	- * apply routing relative to areas
 
 ###Control application behavior by using MVC extensibility points
 
@@ -196,11 +197,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 - enforce conditions by using code contracts; 
 - enable and configure health monitoring (including Performance Monitor)
 
-###Design an exception handling strategy
+###* Design an exception handling strategy
 
 - Handle exceptions across multiple layers, 
 - display custom error pages using global.asax or creating your own HTTPHandler or set web.config attributes, 
-- handle first chance exceptions
+- * Handle first chance exceptions
 
 ###Test a web application
 
@@ -209,7 +210,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - create and run web tests, including using Browser Link; 
 - debug a web application in multiple browsers and mobile emulators
 
-###Debug an Azure application
+###* Debug an Azure application
 
 - Collect diagnostic information by using Azure Diagnostics API and appropriately implement on demand versus scheduled; 
 - choose log types (for example, event logs, performance counters, and crash dumps); 
@@ -222,7 +223,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ##Design and implement security (20-25%)
 
-###Configure authentication
+###* Configure authentication
 
 - Authenticate users; 
 - enforce authentication settings; 
@@ -232,7 +233,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - create custom membership providers; 
 - configure ASP.NET Identity
 
-###Configure and apply authorization
+###*Configure and apply authorization
 
 - Create roles, authorize roles by using configuration, 
 - authorize roles programmatically, 
@@ -256,7 +257,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Secure communication by applying SSL certificates; 
 - salt and hash passwords for storage; 
 - use HTML encoding to prevent cross-site scripting attacks (ANTI-XSS Library); 
-- implement deferred validation and handle unvalidated requests, for example, form, querystring, and URL; 
+- * implement deferred validation and handle unvalidated requests, for example, form, querystring, and URL; 
 - prevent SQL injection attacks by parameterizing queries; 
 - prevent cross-site request forgeries (XSRF)
 
