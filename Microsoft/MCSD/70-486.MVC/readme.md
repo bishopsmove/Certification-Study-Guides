@@ -11,6 +11,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 1. This exam targets MVC 5.1 and VS2013. A number of aspects of MVC 4 still apply, as well as the general functionality of MVC on ASP.Net, but be aware of the MVC 5.x distinctions and how VS2013 is expected to be utilized.
 2. Where the guide mentions "Implement", be prepared to know common method and parameter usage involved with said technology or namespace.
+3. There is a good portion of this test involving Azure services and the functionality thereof.
 
 
 ####Additional Resources
