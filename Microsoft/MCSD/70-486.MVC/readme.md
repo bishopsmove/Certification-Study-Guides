@@ -103,7 +103,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 ###Apply the user interface design for a web application
 
 - Create and apply styles by using CSS, 
-- structure and lay out the user interface by using HTML, 
+- structure and lay out the user interface by using HTML
+	-  [Sending form data](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Sending_and_retrieving_form_data "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Sending_and_retrieving_form_data")
 - implement dynamic page content based on a design
 
 ###Design and implement UI behavior
@@ -166,7 +167,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Plan and implement globalization and localization
 
-- Plan a localization strategy; 
+- Plan a [localization strategy](http://www.dotnetcurry.com/aspnet-mvc/1241/internationalization-aspnet-mvc-using-angularjs "http://www.dotnetcurry.com/aspnet-mvc/1241/internationalization-aspnet-mvc-using-angularjs")
 - create and apply resources to UI, 
 - including JavaScript resources; 
 - set cultures; 
@@ -174,9 +175,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Design and implement MVC controllers and actions
 
-- Apply authorization attributes, global filters, and authentication filters; 
+- Apply authorization attributes, global filters, and [authentication filters](https://visualstudiomagazine.com/articles/2013/08/28/asp_net-authentication-filters.aspx "https://visualstudiomagazine.com/articles/2013/08/28/asp_net-authentication-filters.aspx"); 
 - specify an override filter; 
-- implement action behaviors; 
+- implement [action behaviors](http://www.dotnetcurry.com/aspnet-mvc/1273/action-method-selector-parameters-aspnet-mvc "http://www.dotnetcurry.com/aspnet-mvc/1273/action-method-selector-parameters-aspnet-mvc"); 
 - implement action results; 
 - implement model binding
 
@@ -189,7 +190,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - define areas
 	- * apply routing relative to areas
 
-###Control application behavior by using MVC extensibility points
+###Control application behavior by using [MVC extensibility points](http://codeclimber.net.nz/archive/2009/04/08/13-asp.net-mvc-extensibility-points-you-have-to-know.aspx "http://codeclimber.net.nz/archive/2009/04/08/13-asp.net-mvc-extensibility-points-you-have-to-know.aspx")
 
 - Implement MVC filters and controller factories; 
 - control application behavior by using action results, viewengines, model binders, and route handlers
