@@ -148,8 +148,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- [IIS SEO Toolkit](http://www.iis.net/downloads/microsoft/search-engine-optimization-toolkit "http://www.iis.net/downloads/microsoft/search-engine-optimization-toolkit")
 - view and evaluate conceptual structure by using plugs-in for browsers, 
 - write semantic markup (HTML5 and ARIA) for accessibility (for example, screen readers)
-- SEO Ranking Guidelines
-	- Content is king
+- [SEO Ranking Guidelines](http://searchengineland.com/guide/seo "http://searchengineland.com/guide/seo")
+	- Content is king - quality
 	- Good domain name
 	- Dynamic tags for dynamic content
 		- Use dynamic title and meta tags (description) when content is dynamic/changing
