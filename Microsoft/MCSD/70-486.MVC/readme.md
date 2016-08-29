@@ -254,7 +254,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###*Configure and apply authorization
 
-- Create roles, authorize roles by using configuration, 
+- Create roles, authorize roles by [using configuration](http://www.dotnetcurry.com/aspnet-mvc/1268/access-action-method-multiple-user-roles-using-config "http://www.dotnetcurry.com/aspnet-mvc/1268/access-action-method-multiple-user-roles-using-config"), 
 - authorize roles programmatically, 
 - create custom role providers, 
 - implement WCF service authorization
