@@ -143,8 +143,26 @@ Anything else listed additionally is based on my own observations. Links listed 
 ###Plan for search engine optimization and accessibility
 
 - Use analytical tools to parse HTML, 
+	- [Google Webmaster Tools](https://www.google.com/webmasters "https://www.google.com/webmasters")
+	- [Bing Webmaster Tools](http://www.bing.com/toolbox/webmaster "http://www.bing.com/toolbox/webmaster")
+	- [IIS SEO Toolkit](http://www.iis.net/downloads/microsoft/search-engine-optimization-toolkit "http://www.iis.net/downloads/microsoft/search-engine-optimization-toolkit")
 - view and evaluate conceptual structure by using plugs-in for browsers, 
 - write semantic markup (HTML5 and ARIA) for accessibility (for example, screen readers)
+- SEO Ranking Guidelines
+	- Content is king
+	- Good domain name
+	- Dynamic tags for dynamic content
+		- Use dynamic title and meta tags (description) when content is dynamic/changing
+	- Quality site structure
+	- Link analysis and maintenance
+		- Follow up and maintain good working links through SEO site analysis
+	- Location and history
+		- Make sure that redirects are handling properly (301s, not 304s)
+		- Consistency is rewarded
+	- Trustworthiness
+		- Do not copy content to multiple pages\domains
+		- Avoid keywords in titles
+		- Make sure titles and meta tags are accurate
 
 ###Plan and implement globalization and localization
 
