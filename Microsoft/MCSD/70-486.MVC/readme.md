@@ -218,10 +218,15 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###* Design an exception handling strategy
 
-- Handle exceptions across multiple layers, 
+- Handle exceptions across multiple layers
+	- Try/Catch
+	- Business case (`var == null`) 
+	- `ControllerClass.OnException()` override
+	- `[HandleError]` attribute
+	- `Application_Error` method in global.asax
 - display custom error pages using global.asax or creating your own HTTPHandler or set web.config attributes, 
 	- [HandleErrorAttribute](https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute.aspx "https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute.aspx")
-- * Handle first chance exceptions
+- * [Handle first chance exceptions](https://www.simple-talk.com/dotnet/asp-net/handling-errors-effectively-in-asp-net-mvc/ "https://www.simple-talk.com/dotnet/asp-net/handling-errors-effectively-in-asp-net-mvc/") (with Application_Error in global.asax or with Elmah, with output to email or log file)
 
 ###Test a web application
 
