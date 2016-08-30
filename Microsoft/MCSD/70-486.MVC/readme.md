@@ -175,7 +175,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Design and implement MVC controllers and actions
 
-- Apply authorization attributes, global filters, and [authentication filters](https://visualstudiomagazine.com/articles/2013/08/28/asp_net-authentication-filters.aspx "https://visualstudiomagazine.com/articles/2013/08/28/asp_net-authentication-filters.aspx"); 
+- Apply authorization attributes, [global filters](http://odetocode.com/blogs/scott/archive/2011/01/18/configurable-global-action-filters-for-asp-net-mvc.aspx "http://odetocode.com/blogs/scott/archive/2011/01/18/configurable-global-action-filters-for-asp-net-mvc.aspx"), and [authentication filters](https://visualstudiomagazine.com/articles/2013/08/28/asp_net-authentication-filters.aspx "https://visualstudiomagazine.com/articles/2013/08/28/asp_net-authentication-filters.aspx"); 
 - specify an override filter; 
 - implement [action behaviors](http://www.dotnetcurry.com/aspnet-mvc/1273/action-method-selector-parameters-aspnet-mvc "http://www.dotnetcurry.com/aspnet-mvc/1273/action-method-selector-parameters-aspnet-mvc"); 
 - implement action results; 
@@ -220,6 +220,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Handle exceptions across multiple layers, 
 - display custom error pages using global.asax or creating your own HTTPHandler or set web.config attributes, 
+	- [HandleErrorAttribute](https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute.aspx "https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute.aspx")
 - * Handle first chance exceptions
 
 ###Test a web application
