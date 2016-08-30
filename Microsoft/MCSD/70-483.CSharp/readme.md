@@ -7,6 +7,10 @@ This guide is based, in large part, on the skills summary lists located here:
 
 Anything else listed additionally is based on my own observations. Links listed here may be subject to copyright protection and access to such is up to the discretion of the authors\owners to which they pertain.
 
+####Additional Resources
+
+- [MCSD 70-483: Web Applications (C# option)](http://returnsmart.blogspot.co.uk/2015/04/mcsd-web-applications-c-option.html "http://returnsmart.blogspot.co.uk/2015/04/mcsd-web-applications-c-option.html")
+
 ##  Manage program flow (25–30%)##
 ###Implement multithreading and asynchronous processing###
 
