@@ -18,6 +18,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - [PluralSight "Learning Path"](https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486 "https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486") for 70-486
 - Being familiar with the [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design) "https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)") of OO programming and design will likely help with the material covered here
+- [Failed The Turing Test](http://failedturing.blogspot.com/search/label/70-486 "http://failedturing.blogspot.com/search/label/70-486")
+- Barbarian Meets Coding - [Notes for 70-486](https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/ "https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/")
 
 ##Design the application architecture (15-20%)
 
@@ -195,7 +197,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Implement MVC filters and controller factories; 
 - control application behavior by using action results, viewengines, model binders, and route handlers
 
-###Reduce network bandwidth
+###[Reduce network bandwidth](http://failedturing.blogspot.com/2016/03/microsoft-70-486-reduce-network.html "http://failedturing.blogspot.com/2016/03/microsoft-70-486-reduce-network.html")
 
 - Bundle and minify scripts (CSS and JavaScript), 
 - compress and decompress data (using gzip/deflate; storage), 
@@ -218,7 +220,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###* Design an exception handling strategy
 
-- Handle exceptions across multiple layers
+- Handle exceptions across [multiple layers](http://failedturing.blogspot.com/2016/03/microsoft-70-486-design-exception.html "http://failedturing.blogspot.com/2016/03/microsoft-70-486-design-exception.html")
 	- Try/Catch
 	- Business case (`var == null`) 
 	- `ControllerClass.OnException()` override
@@ -226,7 +228,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- `Application_Error` method in global.asax
 - display custom error pages using global.asax or creating your own HTTPHandler or set web.config attributes, 
 	- [HandleErrorAttribute](https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute.aspx "https://msdn.microsoft.com/en-us/library/system.web.mvc.handleerrorattribute.aspx")
-- * [Handle first chance exceptions](https://www.simple-talk.com/dotnet/asp-net/handling-errors-effectively-in-asp-net-mvc/ "https://www.simple-talk.com/dotnet/asp-net/handling-errors-effectively-in-asp-net-mvc/") (with Application_Error in global.asax or with Elmah, with output to email or log file)
+- *[Handle first chance exceptions](https://msdn.microsoft.com/en-us/library/dd997368(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/dd997368(v=vs.110).aspx") 
+		- registering AppDomain.CurrentDomain.FirstChanceException event in `Application_Start()` in global.asax, with output to email or log file
 
 ###Test a web application
 
