@@ -19,7 +19,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 - [PluralSight "Learning Path"](https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486 "https://www.pluralsight.com/blog/software-development/asp-net-mvc-microsoft-exam-70-486") for 70-486
 - Being familiar with the [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design) "https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)") of OO programming and design will likely help with the material covered here
 - [Failed The Turing Test](http://failedturing.blogspot.com/search/label/70-486 "http://failedturing.blogspot.com/search/label/70-486")
-- Barbarian Meets Coding - [Notes for 70-486](https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/ "https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/")
+- Barbarian Meets Coding - [Notes for 70-486](https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/ "https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/") (Outstanding reference)
+	- Additionally, for HTML/CSS and Javascript/jQuery info, refer to Jaime's [70-480 guide](https://www.barbarianmeetscoding.com/blog/2015/03/15/on-how-i-passed-the-70-480-certification-exam/ "https://www.barbarianmeetscoding.com/blog/2015/03/15/on-how-i-passed-the-70-480-certification-exam/")
 
 ##Design the application architecture (15-20%)
 
@@ -119,7 +120,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Compose the UI layout of an application
 
-- Implement partials for reuse in different areas of the application, 
+- Implement partials for reuse in different areas of the application
+	- [`@Html.Partial` vs. `@Html.RenderPartial`](http://stackoverflow.com/a/5248218/885317 "http://stackoverflow.com/a/5248218/885317") 
 - design and implement pages by using Razor templates (Razor view engine), 
 - design layouts to provide visual structure, 
 - implement master/application pages
@@ -127,12 +129,14 @@ Anything else listed additionally is based on my own observations. Links listed 
 ###Enhance application behavior and style based on browser feature detection
 
 - Detect browser features and capabilities; 
-- create a web application that runs across multiple browsers and mobile devices; 
+- create a web application that runs across [multiple browsers and mobile devices](https://www.simple-talk.com/dotnet/asp.net/multiple-views-and-displaymode-providers-in-asp.net-mvc-4/ "https://www.simple-talk.com/dotnet/asp.net/multiple-views-and-displaymode-providers-in-asp.net-mvc-4/")
 - enhance application behavior and style by using vendor-specific extensions, for example, CSS
+	- browser specific prefix (such as -webkit- or -moz- or -ms-)
 
 ###*Plan an adaptive UI layout
 
-- Plan for running applications in browsers on multiple devices (screen resolution, CSS, HTML), 
+- Plan for running applications in browsers on multiple devices (screen resolution, CSS, HTML)
+	- [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries")
 - plan for mobile web applications
 
 ####Preparation resources
