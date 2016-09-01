@@ -11,6 +11,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Pluralsight [recommended videos for 70-487](http://blog.pluralsight.com/developing-microsoft-azure-and-web-services-microsoft-exam-70-487 "http://blog.pluralsight.com/developing-microsoft-azure-and-web-services-microsoft-exam-70-487")
 - MS Virtual Academy - [Applications on Azure: Putting All the Pieces Together](https://mva.microsoft.com/en-US/training-courses/applications-on-azure-putting-all-the-pieces-together-14429 "https://mva.microsoft.com/en-US/training-courses/applications-on-azure-putting-all-the-pieces-together-14429") (Updated tutorial from *Developing Windows Azure and Web Services Jump Start*)
+- Barbarian Meets Coding - [Notes for 70-487](https://www.barbarianmeetscoding.com/wiki/70-487-azure-and-web-services-certification-study-guide/ "https://www.barbarianmeetscoding.com/wiki/70-487-azure-and-web-services-certification-study-guide/")
 
 
 ##Accessing data (20-25%)
@@ -27,7 +28,9 @@ Create and implement a WCF Data Services service
 Address resources; implement filtering; create a query expression; access payload formats (including JSON); use data service interceptors and service operators
 Manipulate XML data structures
 Read filter, create, modify XML data structures; Manipulate XML data by using XMLReader, XMLWriter, XMLDocument, XPath, LINQ to XML; transform XML by using XSLT transformations
-Preparation resources
+
+####Preparation resources
+
 Transaction isolation levels
 WCF Data Services
 XML documents and data
@@ -44,7 +47,9 @@ Query and manipulate data by using ADO.NET
 Query and manipulate data by using Connection, DataReader, Command, DataAdapter, DataSet; perform synchronous and asynchronous operations; manage transactions (API)
 Create an Entity Framework data model
 Structure the data model using table per type, table per class, table per hierarchy; choose and implement an approach to manage a data model (code first vs. model first vs. database first); implement POCO objects; describe a data model by using conceptual schema definitions, storage schema definition, mapping language (CSDL, SSDL, MSL), and Custom Code First Conventions
-Preparation resources
+
+####Preparation resources
+
 Entity Framework
 Loading related entities
 IQueryable<T> Interface
@@ -69,7 +74,9 @@ Implement messaging patterns
 Implement one way, request/reply, streaming, and duplex communication; implement Azure Service Bus and Azure Queues
 Host and manage services
 Manage services concurrency (single, multiple, reentrant); create service hosts; choose a hosting mechanism; choose an instancing mode (per call, per session, singleton); activate and manage a service by using AppFabric; implement transactional services; host services in an Azure worker role
-Preparation resources
+
+####Preparation resources
+
 Windows Communication Foundation Services and WCF Data Services in Visual Studio
 <bindings>
 Forward-Compatible data contracts
@@ -86,7 +93,9 @@ Host and manage Web API
 Host Web API in an ASP.NET app; self-host a Web API in your own process (a Windows service) including Open Web Interface for .NET (OWIN); host services in an Azure worker role; restrict message size; configure the host server for streaming
 Consume Web API web services
 Consume Web API services by using HttpClient synchronously and asynchronously; send and receive requests in different formats (JSON/HTML/etc.); request batching
-Preparation resources
+
+####Preparation resources
+
 Getting started with ASP.NET Web API 2 (C#)
 Implementing Basic CRUD functionality with the Entity Framework in ASP.NET MVC application
 Json class
@@ -105,7 +114,9 @@ Create, configure, and publish a web package
 Create an IIS InstallPackage; configure the build process to output a web package; apply pre- and post- condition actions to ensure that transformations are correctly applied; include appropriate assets (web content, certificates)
 Share assemblies between multiple applications and servers
 Prepare the environment for use of assemblies across multiple servers (interning); sign assemblies by using a strong name; deploy assemblies to the global assembly cache; implement assembly versioning; create an assembly manifest; configure assembly binding redirects (for example, from MVC4 to MVC5)
-Preparation resources
+
+####Preparation resources
+
 ASP.NET Web Deployment using Visual Studio: Introduction
 How to: Create a Web Deployment Package in Visual Studio
 Installing NuGet
