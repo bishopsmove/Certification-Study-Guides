@@ -124,6 +124,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- [`@Html.Partial` vs. `@Html.RenderPartial`](http://stackoverflow.com/a/5248218/885317 "http://stackoverflow.com/a/5248218/885317") 
 - design and implement pages by using Razor templates (Razor view engine)
 	- [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.118).aspx "https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.118).aspx") 
+	- [TextArea](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.textareaextensions.textarea(v=vs.118).aspx "https://msdn.microsoft.com/en-us/library/system.web.mvc.html.textareaextensions.textarea(v=vs.118).aspx")
+	- [TextBox](https://dzone.com/articles/aspnet-mvc-html-helpers "https://dzone.com/articles/aspnet-mvc-html-helpers")
 - design layouts to provide visual structure, 
 - implement master/application pages
 
