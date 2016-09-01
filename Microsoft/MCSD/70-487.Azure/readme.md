@@ -31,9 +31,9 @@ Read filter, create, modify XML data structures; Manipulate XML data by using XM
 
 ####Preparation resources
 
-Transaction isolation levels
-WCF Data Services
-XML documents and data
+- Transaction isolation levels
+- WCF Data Services
+- XML documents and data
 
 ##Querying and manipulating data by using Entity Framework (20-25%)
 
@@ -50,9 +50,9 @@ Structure the data model using table per type, table per class, table per hierar
 
 ####Preparation resources
 
-Entity Framework
-Loading related entities
-IQueryable<T> Interface
+- Entity Framework
+- Loading related entities
+- IQueryable<T> Interface
 
 ##Designing and implementing WCF Services (15-20%)
 
@@ -77,9 +77,9 @@ Manage services concurrency (single, multiple, reentrant); create service hosts;
 
 ####Preparation resources
 
-Windows Communication Foundation Services and WCF Data Services in Visual Studio
-<bindings>
-Forward-Compatible data contracts
+- Windows Communication Foundation Services and WCF Data Services in Visual Studio
+- <bindings>
+- Forward-Compatible data contracts
 
 ##Creating and consuming Web API-based services (15-20%)
 
@@ -96,9 +96,9 @@ Consume Web API services by using HttpClient synchronously and asynchronously; s
 
 ####Preparation resources
 
-Getting started with ASP.NET Web API 2 (C#)
-Implementing Basic CRUD functionality with the Entity Framework in ASP.NET MVC application
-Json class
+- Getting started with ASP.NET Web API 2 (C#)
+- Implementing Basic CRUD functionality with the Entity Framework in ASP.NET MVC application
+- Json class
 
 ##Deploying web applications and services (15-20%)
 
@@ -117,6 +117,6 @@ Prepare the environment for use of assemblies across multiple servers (interning
 
 ####Preparation resources
 
-ASP.NET Web Deployment using Visual Studio: Introduction
-How to: Create a Web Deployment Package in Visual Studio
-Installing NuGet
+- ASP.NET Web Deployment using Visual Studio: Introduction
+- How to: Create a Web Deployment Package in Visual Studio
+- Installing NuGet
