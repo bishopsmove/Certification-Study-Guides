@@ -1,15 +1,26 @@
 # Developing Microsoft Azure and Web Services (70-487)
-- This guide is based, in large part, on the skills summary lists located here:
+
+This guide is based, in large part, on the skills summary lists located here:
+
 - [Microsoft Learning Portal](https://www.microsoft.com/en-us/learning/exam-70-487.aspx "https://www.microsoft.com/en-us/learning/exam-70-487.aspx")
 - [Microsoft Born To Learn](https://borntolearn.mslearn.net/certification/p/wiki?es=webApp&ec=487 "https://borntolearn.mslearn.net/certification/p/wiki?es=webApp&ec=487") Training and Certification Community Wiki site
-- Anything else listed additionally is based on my own observations. Links listed here may be subject to copyright protection and access to such is up to the discretion of the authors\owners to which they pertain.
+
+Anything else listed additionally is based on my own observations. Links listed here may be subject to copyright protection and access to such is up to the discretion of the authors\owners to which they pertain.
+
 ####Additional Resources
+
 - Pluralsight [recommended videos for 70-487](http://blog.pluralsight.com/developing-microsoft-azure-and-web-services-microsoft-exam-70-487 "http://blog.pluralsight.com/developing-microsoft-azure-and-web-services-microsoft-exam-70-487")
 - MS Virtual Academy - [Applications on Azure: Putting All the Pieces Together](https://mva.microsoft.com/en-US/training-courses/applications-on-azure-putting-all-the-pieces-together-14429 "https://mva.microsoft.com/en-US/training-courses/applications-on-azure-putting-all-the-pieces-together-14429") (Updated tutorial from *Developing Windows Azure and Web Services Jump Start*)
 - Barbarian Meets Coding - [Notes for 70-487](https://www.barbarianmeetscoding.com/wiki/70-487-azure-and-web-services-certification-study-guide/ "https://www.barbarianmeetscoding.com/wiki/70-487-azure-and-web-services-certification-study-guide/")
+
 ##Accessing data (20-25%)
+
 - Choose data access technologies
-- Choose a technology (ADO.NET, Entity Framework, WCF Data Services, Azure storage) based on application requirements
+- Choose a technology based on application requirements
+	- ADO.NET
+	- Entity Framework
+	- WCF Data Services
+	- Azure storage
 - Implement caching
 - Cache static data, apply cache policy (including expirations)
 -  use CacheDependency to refresh cache data
@@ -32,13 +43,22 @@
 -  use data service interceptors and service operators
 - Manipulate XML data structures
 - Read filter, create, modify XML data structures
--  Manipulate XML data by using XMLReader, XMLWriter, XMLDocument, XPath, LINQ to XML
+-  Manipulate XML data by using:
+	- XMLReader
+	- XMLWriter
+	- XMLDocument
+	- XPath
+	- LINQ to XML
 -  transform XML by using XSLT transformations
+
 ####Preparation resources
+
 - Transaction isolation levels
 - WCF Data Services
 - XML documents and data
+
 ##Querying and manipulating data by using Entity Framework (20-25%)
+
 - Query and manipulate data by using the Entity Framework
 - Query, update, and delete data by using DbContext
 -  build a query that uses deferred execution
@@ -66,11 +86,15 @@
 -  choose and implement an approach to manage a data model (code first vs. model first vs. database first)
 -  implement POCO objects
 -  describe a data model by using conceptual schema definitions, storage schema definition, mapping language (CSDL, SSDL, MSL), and Custom Code First Conventions
+
 ####Preparation resources
+
 - Entity Framework
 - Loading related entities
 - IQueryable<T> Interface
+
 ##Designing and implementing WCF Services (15-20%)
+
 - Create a WCF service
 - Create contracts (service, data, message, callback, and fault)
 -  implement message inspectors
@@ -115,11 +139,15 @@
 -  activate and manage a service by using AppFabric
 -  implement transactional services
 -  host services in an Azure worker role
+
 ####Preparation resources
+
 - Windows Communication Foundation Services and WCF Data Services in Visual Studio
 - <bindings>
 - Forward-Compatible data contracts
+
 ##Creating and consuming Web API-based services (15-20%)
+
 - Design a Web API
 - Define HTTP resources with HTTP actions
 -  plan appropriate URI space, and map URI space using routing
@@ -156,11 +184,15 @@
 - Consume Web API services by using HttpClient synchronously and asynchronously
 -  send and receive requests in different formats (JSON/HTML/etc.)
 -  request batching
+
 ####Preparation resources
+
 - Getting started with ASP.NET Web API 2 (C#)
 - Implementing Basic CRUD functionality with the Entity Framework in ASP.NET MVC application
 - Json class
+
 ##Deploying web applications and services (15-20%)
+
 - Design a deployment strategy
 - Create an IIS install package
 -  deploy to web farms
@@ -196,7 +228,9 @@
 -  implement assembly versioning
 -  create an assembly manifest
 -  configure assembly binding redirects (for example, from MVC4 to MVC5)
+
 ####Preparation resources
+
 - ASP.NET Web Deployment using Visual Studio: Introduction
 - How to: Create a Web Deployment Package in Visual Studio
 - Installing NuGet
