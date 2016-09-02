@@ -16,40 +16,40 @@ Anything else listed additionally is based on my own observations. Links listed 
 ##Accessing data (20-25%)
 
 - Choose data access technologies
-- Choose a technology based on application requirements
-	- ADO.NET
-	- Entity Framework
-	- WCF Data Services
-	- Azure storage
+	- Choose a technology based on application requirements
+		- ADO.NET
+		- Entity Framework
+		- WCF Data Services
+		- Azure storage
 - Implement caching
-- Cache static data, apply cache policy (including expirations)
--  use CacheDependency to refresh cache data
--  query notifications
+	- Cache static data, apply cache policy (including expirations)
+	-  use CacheDependency to refresh cache data
+	-  query notifications
 - Implement transactions
-- Manage transactions by using the API from System.Transactions namespace
--  implement distributed transactions
--  specify transaction isolation level
+	- Manage transactions by using the API from System.Transactions namespace
+	-  implement distributed transactions
+	-  specify transaction isolation level
 - Implement data storage in Azure
-- Access data storage in Azure
--  choose data storage mechanism in Azure (blobs, tables, queues, SQL Database)
--  distribute data by using the Content delivery network (CDN)
--  handle exceptions by using retries (SQL Database)
--  manage Azure Caching
+	- Access data storage in Azure
+	-  choose data storage mechanism in Azure (blobs, tables, queues, SQL Database)
+	-  distribute data by using the Content delivery network (CDN)
+	-  handle exceptions by using retries (SQL Database)
+	-  manage Azure Caching
 - Create and implement a WCF Data Services service
-- Address resources
--  implement filtering
--  create a query expression
--  access payload formats (including JSON)
--  use data service interceptors and service operators
+	- Address resources
+	-  implement filtering
+	-  create a query expression
+	-  access payload formats (including JSON)
+	-  use data service interceptors and service operators
 - Manipulate XML data structures
-- Read filter, create, modify XML data structures
--  Manipulate XML data by using:
-	- XMLReader
-	- XMLWriter
-	- XMLDocument
-	- XPath
-	- LINQ to XML
--  transform XML by using XSLT transformations
+	- Read filter, create, modify XML data structures
+	-  Manipulate XML data by using:
+		- XMLReader
+		- XMLWriter
+		- XMLDocument
+		- XPath
+		- LINQ to XML
+	-  transform XML by using XSLT transformations
 
 ####Preparation resources
 
