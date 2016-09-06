@@ -31,6 +31,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 				- Inherently serializable, allowing DataSets and DataTables to be easily passed between tiers
 		- [Entity Framework](https://msdn.microsoft.com/en-us/library/bb399567.aspx "https://msdn.microsoft.com/en-us/library/bb399567.aspx")
 			- [Impedance Mismatch](https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch "https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch") - O/RMs, like EF, were designed to address this issue.
+			- O/RMs, like EF, allow for a separation of concerns between the conceptual model and the underlying data store
 			- EF Model
 				- EF DSLs: All used to define the EF model within the .edmx file:
 					- CSDL: Conceptual Schema Definition Language
