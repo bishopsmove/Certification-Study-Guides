@@ -60,6 +60,12 @@ Anything else listed additionally is based on my own observations. Links listed 
 				- ObjectContext (Legacy)
 				- DbContext (Current)
 					- Wrapper to ObjectContext, with additional functionality
+				- ObjectContext entities
+					- EntityObject - Base class of inheritance
+					- Attributes
+						- EdmEntityTypeAttribute
+						- SerializableAttribute
+						- DataContractAttribute (required for WCF's default serialization)
 			- LazyLoadingEnabled - The ContextOptions property is set to true by default.
 				- Triggered when a Navigation Property is accessed, will conduct another round-trip to the database to pull relevant data. Considered a chatty pattern.
 				- The reciprocal is eager-loading, triggered by the Include() method. Considered a chucky pattern.
