@@ -17,10 +17,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Choose data access technologies
 	- Choose a technology based on application requirements
-		- ADO.NET
-		- Entity Framework
-		- WCF Data Services
-		- Azure storage
+		- [ADO.NET](https://msdn.microsoft.com/en-us/library/h43ks021.aspx "https://msdn.microsoft.com/en-us/library/h43ks021.aspx")
+		- [Entity Framework](https://msdn.microsoft.com/en-us/library/bb399567.aspx "https://msdn.microsoft.com/en-us/library/bb399567.aspx")
+		- [WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668794.aspx "https://msdn.microsoft.com/en-us/library/cc668794.aspx")
+		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
+			- [Code Project](http://www.codeproject.com/Articles/83481/Windows-Azure-Storage "http://www.codeproject.com/Articles/83481/Windows-Azure-Storage")
 - Implement caching
 	- Cache static data, apply cache policy (including expirations)
 	-  use CacheDependency to refresh cache data
