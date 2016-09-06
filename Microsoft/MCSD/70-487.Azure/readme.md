@@ -30,6 +30,21 @@ Anything else listed additionally is based on my own observations. Links listed 
 				- can be loaded directly from XML documents and can persist to XML natively
 				- Inherently serializable, allowing DataSets and DataTables to be easily passed between tiers
 		- [Entity Framework](https://msdn.microsoft.com/en-us/library/bb399567.aspx "https://msdn.microsoft.com/en-us/library/bb399567.aspx")
+			- [Impedance Mismatch](https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch "https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch") - O/RMs, like EF, were designed to address this issue.
+			- EF Model
+				- EF DSLs: All used to define the EF model within the .edmx file:
+					- CSDL: Conceptual Schema Definition Language
+					- SSDL: Store Schema Definition Language
+					- MSL: Mapping Specification Language
+				- Entity Model Designer: 
+					- Used to create the .edmx file
+					- Manipulates the model
+					- Manipulates associations
+					- Manipulates and updates mappings
+					- allows for adding/modifying inheritance relationships
+				- Entity Data Model Wizard: enables you to build out the conceptual model and utilize an existing data store
+				- Create Database Wizard: Opposite to the EDM Wizard, enables you to specify/modify the conceptual model and handles the implementation of the database instance, based on the conceptual model
+				- Update Model Wizard: Allows for modification of the conceptual model, the underlying storage model and the mappings between them.
 		- [WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668794.aspx "https://msdn.microsoft.com/en-us/library/cc668794.aspx")
 		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
 			- [Code Project](http://www.codeproject.com/Articles/83481/Windows-Azure-Storage "http://www.codeproject.com/Articles/83481/Windows-Azure-Storage")
