@@ -45,6 +45,17 @@ Anything else listed additionally is based on my own observations. Links listed 
 				- Entity Data Model Wizard: enables you to build out the conceptual model and utilize an existing data store
 				- Create Database Wizard: Opposite to the EDM Wizard, enables you to specify/modify the conceptual model and handles the implementation of the database instance, based on the conceptual model
 				- Update Model Wizard: Allows for modification of the conceptual model, the underlying storage model and the mappings between them.
+			- Mapping Strategies:
+				- Table Per Hierarchy (TPH)
+					- Better Performance
+					- Resulting Data is slightly denormalized
+					- Adds Descriminator column to determine type of each record
+				- Table Per Type (TPT)
+					- Less performant
+					- Resulting data is properly normalized
+					- Performs a Join across multiple tables to retrieve a single record's worth of data
+				- Table Per Concrete Type (TPC) (Not likely to be covered in the test)
+				- Mixed Inheritance (MI) (Not likely to be covered in the test)
 		- [WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668794.aspx "https://msdn.microsoft.com/en-us/library/cc668794.aspx")
 		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
 			- [Code Project](http://www.codeproject.com/Articles/83481/Windows-Azure-Storage "http://www.codeproject.com/Articles/83481/Windows-Azure-Storage")
