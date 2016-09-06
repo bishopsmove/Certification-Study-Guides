@@ -56,6 +56,13 @@ Anything else listed additionally is based on my own observations. Links listed 
 					- Performs a Join across multiple tables to retrieve a single record's worth of data
 				- Table Per Concrete Type (TPC) (Not likely to be covered in the test)
 				- Mixed Inheritance (MI) (Not likely to be covered in the test)
+			- DbContext vs ObjectContext
+				- ObjectContext (Legacy)
+				- DbContext (Current)
+					- Wrapper to ObjectContext, with additional functionality
+			- LazyLoadingEnabled - The ContextOptions property is set to true by default.
+				- Triggered when a Navigation Property is accessed, will conduct another round-trip to the database to pull relevant data. Considered a chatty pattern.
+				- The reciprocal is eager-loading, triggered by the Include() method. Considered a chucky pattern.
 		- [WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668794.aspx "https://msdn.microsoft.com/en-us/library/cc668794.aspx")
 		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
 			- [Code Project](http://www.codeproject.com/Articles/83481/Windows-Azure-Storage "http://www.codeproject.com/Articles/83481/Windows-Azure-Storage")
