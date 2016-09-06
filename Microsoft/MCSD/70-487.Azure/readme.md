@@ -18,6 +18,17 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Choose data access technologies
 	- Choose a technology based on application requirements
 		- [ADO.NET](https://msdn.microsoft.com/en-us/library/h43ks021.aspx "https://msdn.microsoft.com/en-us/library/h43ks021.aspx")
+			- DataReaders
+				- Faster data access than DataAdapters
+				- contains both synchronous and asynchronous methods
+				- iterates only once and in forward-only fashion
+				- cannot enfore constraints or recognize relationships between DB tables
+			- DataAdapter
+				- closely mimics the behavior of an RDBMS, like an in-memory portion of the DB
+				- contains only synchronous methods
+				- can iterate *n* number of times in a variety of means
+				- can be loaded directly from XML documents and can persist to XML natively
+				- Inherently serializable, allowing DataSets and DataTables to be easily passed between tiers
 		- [Entity Framework](https://msdn.microsoft.com/en-us/library/bb399567.aspx "https://msdn.microsoft.com/en-us/library/bb399567.aspx")
 		- [WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668794.aspx "https://msdn.microsoft.com/en-us/library/cc668794.aspx")
 		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
