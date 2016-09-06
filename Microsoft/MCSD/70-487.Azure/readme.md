@@ -71,6 +71,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 				- Triggered when a Navigation Property is accessed, will conduct another round-trip to the database to pull relevant data. Considered a chatty pattern.
 				- The reciprocal is eager-loading, triggered by the Include() method. Considered a chucky pattern.
 		- [WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668794.aspx "https://msdn.microsoft.com/en-us/library/cc668794.aspx")
+			- Allows a web service interface (HTTP/S) to function as a data provider
+			- OData
+				- When WCF utilizes OData, data resources can be addressible by URI, providing for universal data access
+				- Default data format is Atom but can output to JSON and/or XML and conforms to RESTful notation
+			- Meant to be utilized with EF
 		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
 			- [Code Project](http://www.codeproject.com/Articles/83481/Windows-Azure-Storage "http://www.codeproject.com/Articles/83481/Windows-Azure-Storage")
 - Implement caching
