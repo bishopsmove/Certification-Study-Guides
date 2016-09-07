@@ -79,7 +79,16 @@ Anything else listed additionally is based on my own observations. Links listed 
 		- [Azure storage](https://msdn.microsoft.com/en-us/magazine/gg309178.aspx "https://msdn.microsoft.com/en-us/magazine/gg309178.aspx")
 			- [Code Project](http://www.codeproject.com/Articles/83481/Windows-Azure-Storage "http://www.codeproject.com/Articles/83481/Windows-Azure-Storage")
 - Implement caching
-	- Cache static data, apply cache policy (including expirations)
+	- Caching Options
+		- [WCF Caching Support](https://msdn.microsoft.com/en-us/library/ee230443.aspx "https://msdn.microsoft.com/en-us/library/ee230443.aspx")
+			- Basic Web HTTP Service Caching
+			- SQL Cache Dependency
+			- Conditional HTTP GET based Caching
+		- [Azure Caching Service](https://msdn.microsoft.com/en-us/magazine/gg983488.aspx "https://msdn.microsoft.com/en-us/magazine/gg983488.aspx")
+			- Shared of Co-Located Caching
+			- Dedicated Caching
+	- Cache static data, 
+	- apply cache policy (including expirations)
 	-  use CacheDependency to refresh cache data
 	-  query notifications
 - Implement transactions
@@ -88,7 +97,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 	-  specify transaction isolation level
 - Implement data storage in Azure
 	- Access data storage in Azure
-	-  choose data storage mechanism in Azure (blobs, tables, queues, SQL Database)
+	-  choose data storage mechanism in Azure:
+		- blobs
+		- tables
+		- [queues](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/ "https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/")
+		- SQL Database
 	-  distribute data by using the Content delivery network (CDN)
 	-  handle exceptions by using retries (SQL Database)
 	-  manage Azure Caching
