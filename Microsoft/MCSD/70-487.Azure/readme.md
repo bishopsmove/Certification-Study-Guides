@@ -89,6 +89,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 			- Dedicated Caching
 	- Cache static data, 
 	- apply [cache policy](https://msdn.microsoft.com/en-us/library/system.runtime.caching.cacheitempolicy.aspx#Anchor_6 "https://msdn.microsoft.com/en-us/library/system.runtime.caching.cacheitempolicy.aspx#Anchor_6") (including expirations)
+		- Absolute Expirations
+		- Sliding Expirations
+	- CachItemPriority
 	-  use CacheDependency to refresh cache data
 	-  query notifications
 - Implement transactions
