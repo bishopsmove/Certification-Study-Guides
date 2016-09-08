@@ -92,6 +92,14 @@ Anything else listed additionally is based on my own observations. Links listed 
 		- Absolute Expirations
 		- Sliding Expirations
 	- CachItemPriority
+	- CacheChangeMonitor
+		- CacheEntryChangeMonitor : base class
+		- FileChangeMonitor: specific file
+		- HostFileChangeMonitor: directory or file paths
+		- SqlChangeMonitor
+	- ObjectCache vs HttpContext.Cache
+		- If implemented with ASP.Net: HttpContext.Cache
+		- Everything else: ObjectCache
 	-  use CacheDependency to refresh cache data
 		-  [SqlCacheDependency](https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx "https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx")
 			-  Wraps the SqlDependency object
