@@ -93,7 +93,12 @@ Anything else listed additionally is based on my own observations. Links listed 
 		- Sliding Expirations
 	- CachItemPriority
 	-  use CacheDependency to refresh cache data
-	-  query notifications
+		-  [SqlCacheDependency](https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx "https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx")
+			-  Wraps the SqlDependency object
+		-  [AggregateCacheDependency](https://msdn.microsoft.com/en-us/library/system.web.caching.aggregatecachedependency.aspx "https://msdn.microsoft.com/en-us/library/system.web.caching.aggregatecachedependency.aspx")
+			-  Specific to a collection of objects, where a change to one item in the collection removes the collection from cache and refreshes.
+	-  [query notifications](https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx "https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx")
+		-  [Enabling Query Notifications](https://msdn.microsoft.com/en-us/library/ms172133.aspx "https://msdn.microsoft.com/en-us/library/ms172133.aspx")
 - Implement transactions
 	- Manage transactions by using the API from System.Transactions namespace
 	-  implement distributed transactions
