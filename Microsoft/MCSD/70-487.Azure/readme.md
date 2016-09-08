@@ -114,8 +114,17 @@ Anything else listed additionally is based on my own observations. Links listed 
 		- Considered part of an implicit programming model
 		- The more recommended choice (by MS)
 	- Manage transactions by using the API from System.Transactions namespace
+		- use TransactionScope in `Using` block, with final command `TransactionScope.Complete()` executed.
 	-  implement distributed transactions
+		-  When more than one connection is opened inside a transaction, that transaction is automatically escalated to a full distributed transaction.
 	-  specify transaction isolation level
+		- Unspecified
+		- Chaos - not supported in SQL or Oracle
+		- ReadUncommitted - No locks
+		- ReadCommitted - Shared locks
+		- RepeatableRead - All relevant data locked
+		- Serializable - Range lock over DataSet
+		- Snapshot - Copy of data, fully insulated. Allows concurrent changes.
 - Implement data storage in Azure
 	- Access data storage in Azure
 	-  choose data storage mechanism in Azure:
