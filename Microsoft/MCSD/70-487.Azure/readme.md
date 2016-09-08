@@ -100,6 +100,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 	-  [query notifications](https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx "https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx")
 		-  [Enabling Query Notifications](https://msdn.microsoft.com/en-us/library/ms172133.aspx "https://msdn.microsoft.com/en-us/library/ms172133.aspx")
 - Implement transactions
+	- [Transactions](https://msdn.microsoft.com/en-us/library/system.transactions(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.transactions(v=vs.110).aspx")
+		- Considered part of an explicit programming model
+	- [TransactionScope](https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx "https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx")
+		- Considered part of an implicit programming model
+		- The more recommended choice (by MS)
 	- Manage transactions by using the API from System.Transactions namespace
 	-  implement distributed transactions
 	-  specify transaction isolation level
