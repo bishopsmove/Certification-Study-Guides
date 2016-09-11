@@ -138,14 +138,18 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Create and implement a WCF Data Services service
 	- Address resources
 	-  implement filtering
+		-  EXAMPLE
 	-  create a query expression
 	-  access payload formats (including JSON)
 	-  use data service interceptors and service operators
+		-  EXAMPLE
 - Manipulate XML data structures
 	- Read filter, create, modify XML data structures
 	-  Manipulate XML data by using:
 		- XMLReader
+			- EXAMPLE
 		- XMLWriter
+			- EXAMPLE
 		- XMLDocument
 		- XPath
 		- LINQ to XML
@@ -201,20 +205,22 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  implement asynchronous operations in the service
 - Configure WCF services by using configuration settings
 - Configure service behaviors
+	- EXAMPLE
 -  configure service endpoints
 -  configure bindings including WebSocket bindings
+	-  EXAMPLE
 -  specify a service contract
 -  expose service metadata (XSDs, WSDL, and metadata exchange endpoint)
+	-  EXAMPLE
 -  configure message compression and encoding
 - Configure WCF services by using the API
-- Configure service behaviors
--  configure service endpoints
--  configure binding
--  specify a service contract
--  expose service metadata (XSDs, WSDL, and metadata exchange)
 -  WCF routing and discovery features
 - Secure a WCF service
-- Implement message level security, implement transport level security
+- Implement 
+	- message level security, 
+		- EXAMPLE
+	- implement transport level security
+		- EXAMPLE
 -  implement certificates
 -  design and implement multiple authentication modes
 - Consume WCF services
@@ -225,17 +231,29 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Version different types of contracts (message, service, data)
 -  configure address, binding, and routing service versioning
 - Create and configure a WCF service on Azure
-- Create and configure bindings for WCF services (Azure SDKâ€”extensions to WCF)
+- Create and configure bindings for WCF services (Azure extensions to WCF)
 -  relay bindings to Azure using service bus endpoints
 -  integrate with the Azure service bus relay
 - Implement messaging patterns
 - Implement one way, request/reply, streaming, and duplex communication
 -  implement Azure Service Bus and Azure Queues
 - Host and manage services
-- Manage services concurrency (single, multiple, reentrant)
+- Manage services concurrency 
+	- single
+		- EXAMPLE 
+	- multiple
+		- EXAMPLE 
+	- reentrant
+		- EXAMPLE
 -  create service hosts
 -  choose a hosting mechanism
--  choose an instancing mode (per call, per session, singleton)
+-  choose an instancing mode 
+	-  per call
+		-  EXAMPLE
+	-  per session
+		-  EXAMPLE
+	-  singleton
+		-  EXAMPLE
 -  activate and manage a service by using AppFabric
 -  implement transactional services
 -  host services in an Azure worker role
@@ -264,6 +282,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  implement action filters and exception filters to manage controller execution
 -  implement asynchronous and synchronous actions
 -  implement streaming actions
+	-  EXAMPLE
 -  implement SignalR
 -  test Web API web services
 - Secure a Web API
@@ -280,6 +299,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  host services in an Azure worker role
 -  restrict message size
 -  configure the host server for streaming
+	-  EXAMPLE
 - Consume Web API web services
 - Consume Web API services by using HttpClient synchronously and asynchronously
 -  send and receive requests in different formats (JSON/HTML/etc.)
@@ -316,9 +336,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Create and configure a NuGet package
 -  install and update an existing NuGet package
 -  connect to a local repository cache for NuGet, set up your own package repository
+	-  EXAMPLE
 - Create, configure, and publish a web package
 - Create an IIS InstallPackage
 -  configure the build process to output a web package
+	-  EXAMPLE
 -  apply pre- and post- condition actions to ensure that transformations are correctly applied
 -  include appropriate assets (web content, certificates)
 - Share assemblies between multiple applications and servers
