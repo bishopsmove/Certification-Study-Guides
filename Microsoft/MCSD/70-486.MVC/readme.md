@@ -21,6 +21,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - [Failed The Turing Test](http://failedturing.blogspot.com/search/label/70-486 "http://failedturing.blogspot.com/search/label/70-486")
 - Barbarian Meets Coding - [Notes for 70-486](https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/ "https://www.barbarianmeetscoding.com/wiki/asp-net-mvc/asp-net-mvc-certification/") (Outstanding reference)
 	- Additionally, for HTML/CSS and Javascript/jQuery info, refer to Jaime's [70-480 guide](https://www.barbarianmeetscoding.com/blog/2015/03/15/on-how-i-passed-the-70-480-certification-exam/ "https://www.barbarianmeetscoding.com/blog/2015/03/15/on-how-i-passed-the-70-480-certification-exam/")
+- Adnan Massod R&D - [Study Notes for 70-486](http://blog.adnanmasood.com/2013/05/20/study-notes-for-70-486-developing-asp-net-mvc-4-web-applications/ "http://blog.adnanmasood.com/2013/05/20/study-notes-for-70-486-developing-asp-net-mvc-4-web-applications/")
 
 ##Design the application architecture (15-20%)
 
@@ -92,7 +93,24 @@ Anything else listed additionally is based on my own observations. Links listed 
 ###Design HTTP modules and handlers
 
 - Implement synchronous and asynchronous modules and handlers, 
-- choose between modules and handlers in IIS
+- choose between modules and handlers in IIS (verbatim from Barbarian Meets Coding)
+	
+----------
+**HTTP handlers** allow you to inject logic based on the extension of the file name requested, they are executed based of file extensions, URLs and HTTP verbs. **HTTP modules** are event driven and inject logic before a resource is requested.
+
+Some ways to differentiate when to use which:
+
+- serve requests for specific URL/extensions => *Http handler*
+- applies to all requests based on arbitrary rules => *Http module*
+- need information available prior to calling to MVC code => *Http module*
+- handle specific files differently => *Http handler*
+
+####`HttpHandler` vs `HttpModule` Summary
+
+- `HttpHandler` processes HTTP endpoints requests whereas,
+- `HttpModule` gives you access to the HTTP pipeline, which allows it to inspect incoming requests and outgoing responses by subscribing to events.
+
+----------
 
 ####Preparation resources
 
