@@ -283,8 +283,13 @@ Some ways to differentiate when to use which:
 - choose between Windows, Forms, and custom authentication; 
 - manage user session by using cookies; 
 - configure membership providers; 
-- create custom membership providers; 
+- create custom membership providers
+	- `MembershipProvider` vs `WebSecurity`
+		- `MembershipProvider` is an abstract class which can be used to create a custom provider.
+		- `WebSecurity` is a wrapper of `SimpleMembership` which allows easy access to many of the security methods contained therein.
+		- `WebSecurity` is not interoperable with MembershipProvider, only with SimpleMembership.
 - configure ASP.NET Identity
+
 
 ###*Configure and apply authorization
 
