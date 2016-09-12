@@ -282,7 +282,10 @@ Some ways to differentiate when to use which:
 - enforce authentication settings; 
 - choose between Windows, Forms, and custom authentication; 
 - manage user session by using cookies; 
-- configure membership providers; 
+- configure membership providers
+	- `SimpleMembership`
+	- `SimpleRoles`
+	- `SqlMembershipProvider`
 - create custom membership providers
 	- `MembershipProvider` vs `WebSecurity`
 		- `MembershipProvider` is an abstract class which can be used to create a custom provider.
