@@ -300,7 +300,7 @@ Some ways to differentiate when to use which:
 - Create roles, authorize roles by [using configuration](http://www.dotnetcurry.com/aspnet-mvc/1268/access-action-method-multiple-user-roles-using-config "http://www.dotnetcurry.com/aspnet-mvc/1268/access-action-method-multiple-user-roles-using-config"), 
 - authorize roles programmatically, 
 - create custom role providers, 
-- implement WCF service authorization
+- implement [WCF service authorization](https://msdn.microsoft.com/en-us/library/ff405740.aspx "https://msdn.microsoft.com/en-us/library/ff405740.aspx")
 
 ###Design and implement claims-based authentication across federated identity stores
 
