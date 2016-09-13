@@ -298,8 +298,12 @@ Some ways to differentiate when to use which:
 ###*Configure and apply authorization
 
 - Create roles, authorize roles by [using configuration](http://www.dotnetcurry.com/aspnet-mvc/1268/access-action-method-multiple-user-roles-using-config "http://www.dotnetcurry.com/aspnet-mvc/1268/access-action-method-multiple-user-roles-using-config"), 
-- authorize roles programmatically, 
-- create custom role providers, 
+- authorize roles programmatically
+	- `AuthorizeAttribute`
+		- Decorate controllers and methods, specifying roles that have access
+		- Limited to roles 
+- create custom role providers
+	- Implement with `RoleProviderBase`
 - implement [WCF service authorization](https://msdn.microsoft.com/en-us/library/ff405740.aspx "https://msdn.microsoft.com/en-us/library/ff405740.aspx")
 
 ###Design and implement claims-based authentication across federated identity stores
@@ -321,6 +325,7 @@ Some ways to differentiate when to use which:
 		- Supports exporting\importing of keys, allowing for multiple servers to share configuration files
 	- `aspnet_regiis` with `-pe` switch
 		- enables **provider encryption** on specific sections of web.config
+		- to decrypt, replace the `-pe` switch with the `-pd` switch
 		- example: `aspnet_regiis -pe "ConnectionStrings" -app "/TestApp" -prov "RsaProtectedConfigurationProvider"`
 - sign application data to prevent tampering
 
