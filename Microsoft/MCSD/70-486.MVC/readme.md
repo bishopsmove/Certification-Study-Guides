@@ -311,7 +311,17 @@ Some ways to differentiate when to use which:
 ###Manage data integrity
 
 - Apply encryption to application data, 
-- apply encryption to the configuration sections of an application, 
+- apply encryption to the configuration sections of an application 
+	- set in the web.config or utilizes machine.config provider setting instance
+	- `DPAPIProtectedConfigurationProvider`:
+		- Uses the Windows Data Protection API for encryption/decryption
+		- Appropriate for stand-alone web instances, utilizing the machine key
+	- `RsaProtectedConfigurationProvider`:
+		- Utilizes the RSA encryption algorithm
+		- Supports exporting\importing of keys, allowing for multiple servers to share configuration files
+	- `aspnet_regiis` with `-pe` switch
+		- enables **provider encryption** on specific sections of web.config
+		- example: `aspnet_regiis -pe "ConnectionStrings" -app "/TestApp" -prov "RsaProtectedConfigurationProvider"`
 - sign application data to prevent tampering
 
 ###Implement a secure site with ASP.NET
