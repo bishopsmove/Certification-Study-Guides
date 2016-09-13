@@ -293,6 +293,14 @@ Some ways to differentiate when to use which:
 			- `DeleteAccount()` is not implemented in this helper. 
 		- `WebSecurity` is not interoperable with MembershipProvider, only with SimpleMembership.
 - configure ASP.NET Identity
+- WCF Authentication Security
+	- Two basic mechanisms for WCF security
+		- Transport: 
+			- Message encrypted at the transport-level, leveraging whichever security mechanism the transport protocol uses (TCP: TLS; HTTPS: SSL)
+			- Security is point-to-point and tends to have greater interoperability
+			- Both caller credentials and message are encrypted between access points
+			- Better performance and can benefit from hardware acceleration
+		- Message
 
 
 ###*Configure and apply authorization
