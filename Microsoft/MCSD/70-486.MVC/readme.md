@@ -297,10 +297,16 @@ Some ways to differentiate when to use which:
 	- Two basic mechanisms for WCF security
 		- Transport: 
 			- Message encrypted at the transport-level, leveraging whichever security mechanism the transport protocol uses (TCP: TLS; HTTPS: SSL)
-			- Security is point-to-point and tends to have greater interoperability
-			- Both caller credentials and message are encrypted between access points
+			- Security is point-to-point and tends to have greater interoperability but any message forwarded beyond the service is not automatically encrypted.
+			- Both caller credentials and message are encrypted between access points but are essentially separate(?)
 			- Better performance and can benefit from hardware acceleration
-		- Message
+		- Message:
+			- Both the message and the caller's credentials are encrypted together using the WS-Security specification
+			- Resulting payload is encrypted, even if forwarded
+			- Performance suffers:
+				- this mechanism cannot benefit from hardware acceleration 
+				- the message must be re-encrypted before it can be forwarded to other services
+				- the WS-Security specification must be supported through the service pipeline
 
 
 ###*Configure and apply authorization
