@@ -389,7 +389,32 @@ Some ways to differentiate when to use which:
 ###Design and implement claims-based authentication across federated identity stores
 
 - Implement federated authentication by using Azure Access Control Service; 
-- create a custom security token by using Windows Identity Foundation; 
+- create a custom security token by using Windows Identity Foundation
+	- Token definition (in xml)
+		- contains the claims and signature definitions, as well as certificate information
+	- Custom Token managed class, derived from `SecurityToken`
+	- Custom TokenHandler managed class, derived from `SecurityTokenHandler`
+		- Override the `CanValidateToken()` and `ValidateToken()` methods for the TokenHandler to be used and to properly parse the custom Token class, whose signature can then be validated
+	- Custom TokenHandler needs to be added to app.config (Example):
+~~~
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <!-- Registers the microsoft.IdentityModel configuration section -->
+    <section name="microsoft.identityModel" type="Microsoft.IdentityModel.Configuration.MicrosoftIdentityModelSection, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+  </configSections>
+  <microsoft.identityModel>
+    <service>
+      <securityTokenHandlers>
+        <remove type="Microsoft.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+        <add type="SimpleCustomSecurityTokenHandler.CustomUserNamePasswordValidatorSecurityTokenHandler, SimpleCustomSecurityTokenHandler"/>
+      </securityTokenHandlers>
+    </service>
+  </microsoft.identityModel>
+</configuration>
+~~~
+(Note both the Remove and Add nodes specified, which prevents the default handler from executing before the custom handler can take action.)
+
 - handle token formats (for example, oAuth, OpenID, Microsoft Account, Google, Twitter, and Facebook) for SAML and SWT tokens
 
 ###Manage data integrity
