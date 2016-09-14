@@ -302,11 +302,69 @@ Some ways to differentiate when to use which:
 			- Better performance and can benefit from hardware acceleration
 		- Message:
 			- Both the message and the caller's credentials are encrypted together using the WS-Security specification
-			- Resulting payload is encrypted, even if forwarded
+			- Resulting payload is encrypted, even if forwarded, resulting in better overall security
 			- Performance suffers:
 				- this mechanism cannot benefit from hardware acceleration 
 				- the message must be re-encrypted before it can be forwarded to other services
 				- the WS-Security specification must be supported through the service pipeline
+	- Security Modes
+		- None. Messages are not secured.
+		- Transport. Messages are secured using transport security. 
+		- Message. Messages are secured using message security. 
+		- TransportWithMessageCredential. Message protection and authorization occur at the transport level and credentials are passed with the message.
+		- TransportCredentialOnly. Credentials are passed at the transport level but the message is not encrypted. This option is available only if you are using the BasicHttpBinding binding.
+		- Both. Messages are secured using both transport level and message level security. This is supported only if you are using Microsoft Message Queue Server. 
+	- Credential Types (Transport)
+		- Windows. The client uses a Windows token representing the logged in user’s Windows identity. The service uses the credentials of the process identity or an SSL certificate. 
+		- Basic. The client passes a user name and password to the service. Typically, the user will enter the user name and password in a login dialog box. The service uses a SSL certificate. This option is available only with HTTP protocols. 
+		- Certificate. The client uses an X.509 certificate and the service uses either that certificate or an SSL certificate.
+		- NTLM. The service validates the client using a challenge/response scheme against Windows accounts. The service uses a SSL certificate. This option is available only with the HTTPS protocol.
+		- None. The service does not validate the client.
+	- Credential Types (Message)
+		- Windows. The client uses a Windows token representing the logged in user’s Windows identity. The service uses the credentials of the process identity or an SSL certificate. 
+		- UserName. The client passes a user name and password to the service. Typically, the user will enter the user name and password in a login dialog box. The service can validate the user name and password using a Windows account or the ASP.NET membership provider. 
+		- Certificate. The client uses an X.509 certificate and the service uses either that certificate or an SSL certificate.
+		- IssueToken. The client and service use the Secure Token Service, which issues tokens the client and service trust. Windows CardSpace uses the Secure Token Service.
+		- None. The service does not validate the client.
+	- Config example
+
+~~~
+	<bindings>
+	  <netTcpBinding>
+	    <binding name="SecureService_Tcp"
+	      …
+	      <security mode="Transport">
+	        <transport clientCredentialType="Windows"
+	                   protectionLevel="EncryptAndSign" />
+	        <message clientCredentialType="Windows" />
+	      </security>
+	    </binding>
+	  </netTcpBinding>
+	  <wsHttpBinding>
+	    <binding name="SecureService_WsHttp"
+	      …
+	      <security mode="Message">
+	        <transport clientCredentialType="Windows"
+	                   proxyCredentialType="None"
+	                   realm="" />
+	        <message clientCredentialType="Windows"
+	                 negotiateServiceCredential="true"
+	                 algorithmSuite="Default"
+	                 establishSecurityContext="true" />
+	      </security>
+	    </binding>
+	  </wsHttpBinding>
+	</bindings>
+~~~
+- WCF Authorization
+	- Authorization Options
+		- Role-based. Access to a service and to operations of the service is based on the user’s role. 
+		- Identity based. Access is based on claims made within the user’s credentials. This is an extension to role-based authorization and provides a more fine grained approach. This approach will typically be used with issue token authentication.
+		- Resource based. Resources, such as WCF services, are secured using Windows Access Control Lists (ACLs).
+	- Role Determination Options
+		- Windows groups. You can use the built-in Windows groups such as Administrators or Power Users or create your own Windows groups. 
+		- Custom roles. You can create roles that are specific to your application, such as Manager, Employee, Administrator, etc.
+		- ASP.NET role management. You can use the ASP.NET role provider and use roles you have defined for a Web site. 
 
 
 ###*Configure and apply authorization
