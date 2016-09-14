@@ -280,8 +280,16 @@ Some ways to differentiate when to use which:
 
 - Authenticate users; 
 - enforce authentication settings; 
-- choose between Windows, Forms, and custom authentication; 
-- manage user session by using cookies; 
+- Authentication options - choose between:
+	- Windows - Best for intra-net sites and websites that have access to AD controllers, built-in to ASP.Net & IIS
+	- Forms - Integrates with both identity- and claims-based authentication with built-in support for standard membership providers
+	- custom authentication - Allows greater flexibility in user-store access and modification 
+- manage user session by using cookies
+	- Cookie storage - Allowing for 2K of data on client or can be stored at the server via Session management
+	- Cookie persistence 
+		- When enabled, this allows a client to close browser and return to site, maintaining the cookie
+		- When disabled, the cookie expires once the session ends or the client closes the browser
+	- Cookie reference - Allows the cookie to remain relatively small, as it only holds a reference to the data location on the server 
 - configure membership providers
 	- `SimpleMembership`
 	- `SimpleRoles`
