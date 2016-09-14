@@ -55,6 +55,28 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Design a hybrid application (on-premises versus off-premises, including [Azure](https://msdn.microsoft.com/en-us/library/hh871440.aspx "https://msdn.microsoft.com/en-us/library/hh871440.aspx"))
 	- [Cloud Hybrid Application Using Service Bus Relay](http://www.windowsazure.com/en-us/develop/net/tutorials/hybrid-solution/ "http://www.windowsazure.com/en-us/develop/net/tutorials/hybrid-solution/")
+		- app.config example:
+~~~
+<system.serviceModel>
+...
+  <services>
+     <service name="ProductsServer.ProductsService">
+       <endpoint address="sb://yourServiceNamespace.servicebus.windows.net/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts" behaviorConfiguration="products"/>
+     </service>
+  </services>
+  <behaviors>
+     <endpointBehaviors>
+       <behavior name="products">
+         <transportClientEndpointBehavior>
+            <tokenProvider>
+               <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+            </tokenProvider>
+         </transportClientEndpointBehavior>
+       </behavior>
+     </endpointBehaviors>
+  </behaviors>
+</system.serviceModel>
+~~~
 - plan for [session management](http://msdn.microsoft.com/library/ms178586.aspx "http://msdn.microsoft.com/library/ms178586.aspx") in a distributed environment, 
 - plan [web farms](http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework "http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework")
 
