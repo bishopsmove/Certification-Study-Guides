@@ -236,6 +236,8 @@ Some ways to differentiate when to use which:
 - structure and lay out the user interface by using HTML
 	-  [Sending form data](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Sending_and_retrieving_form_data "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Sending_and_retrieving_form_data")
 - implement dynamic page content based on a design
+	- Canvas: An HTML5 element that works like an `<img>` tag, allowing the display of 2d content dynamically
+		- Placing fallback context inside the `<canvas>` tag allows browsers which don't support canvas to still render the static content. Browsers that do support `<canvas>` tags will ingore the internal static content.
 
 ###Design and implement UI behavior
 
