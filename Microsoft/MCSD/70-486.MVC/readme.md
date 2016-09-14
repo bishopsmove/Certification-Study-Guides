@@ -56,27 +56,70 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Design a hybrid application (on-premises versus off-premises, including [Azure](https://msdn.microsoft.com/en-us/library/hh871440.aspx "https://msdn.microsoft.com/en-us/library/hh871440.aspx"))
 	- [Cloud Hybrid Application Using Service Bus Relay](http://www.windowsazure.com/en-us/develop/net/tutorials/hybrid-solution/ "http://www.windowsazure.com/en-us/develop/net/tutorials/hybrid-solution/")
 		- app.config example:
-~~~
-<system.serviceModel>
-...
-  <services>
-     <service name="ProductsServer.ProductsService">
-       <endpoint address="sb://yourServiceNamespace.servicebus.windows.net/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts" behaviorConfiguration="products"/>
-     </service>
-  </services>
-  <behaviors>
-     <endpointBehaviors>
-       <behavior name="products">
-         <transportClientEndpointBehavior>
-            <tokenProvider>
-               <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
-            </tokenProvider>
-         </transportClientEndpointBehavior>
-       </behavior>
-     </endpointBehaviors>
-  </behaviors>
-</system.serviceModel>
-~~~
+
+				<system.serviceModel>
+				...
+				  <services>
+				     <service name="ProductsServer.ProductsService">
+				       <endpoint address="sb://yourServiceNamespace.servicebus.windows.net/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts" behaviorConfiguration="products"/>
+				     </service>
+				  </services>
+				  <behaviors>
+				     <endpointBehaviors>
+				       <behavior name="products">
+				         <transportClientEndpointBehavior>
+				            <tokenProvider>
+				               <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+				            </tokenProvider>
+				         </transportClientEndpointBehavior>
+				       </behavior>
+				     </endpointBehaviors>
+				  </behaviors>
+				</system.serviceModel>
+
+
+		- App implementation example:
+		
+		
+				namespace ProductsWeb.Controllers
+				{
+				    using System.Linq;
+				    using System.ServiceModel;
+				    using System.Web.Mvc;
+				    using Microsoft.ServiceBus;
+				    using Models;
+				    using ProductsServer;
+				
+				    public class HomeController : Controller
+				    {
+				        // Declare the channel factory.
+				        static ChannelFactory<IProductsChannel> channelFactory;
+				
+				        static HomeController()
+				        {
+				            // Create shared access signature token credentials for authentication.
+				            channelFactory = new ChannelFactory<IProductsChannel>(new NetTcpRelayBinding(),
+				                "sb://yourServiceNamespace.servicebus.windows.net/products");
+				            channelFactory.Endpoint.Behaviors.Add(new TransportClientEndpointBehavior {
+				                TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(
+				                    "RootManageSharedAccessKey", "yourKey") });
+				        }
+				
+				        public ActionResult Index()
+				        {
+				            using (IProductsChannel channel = channelFactory.CreateChannel())
+				            {
+				                // Return a view of the products inventory.
+				                return this.View(from prod in channel.GetProducts()
+				                                 select
+				                                     new Product { Id = prod.Id, Name = prod.Name,
+				                                         Quantity = prod.Quantity });
+				            }
+				        }
+				    }
+				}
+
+	
 - plan for [session management](http://msdn.microsoft.com/library/ms178586.aspx "http://msdn.microsoft.com/library/ms178586.aspx") in a distributed environment, 
 - plan [web farms](http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework "http://weblogs.asp.net/scottgu/introducing-the-microsoft-web-farm-framework")
 
@@ -100,7 +143,51 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ###Design a caching strategy
 
-- Implement [page output caching](http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs "http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs") (performance oriented), 
+- Implement [page output caching](http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs "http://www.asp.net/mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs") (performance oriented)
+	- Duration: measured in seconds
+	- VaryByParam: "none", "*" (=all), "{param name};..."
+	- Location: 
+		- Any
+		- Client
+		- Downstream
+		- Server
+		- ServerAndClient 
+		- None
+	- OutputCaching can also be configured via profile (example):
+		- app.config
+
+
+				<caching>
+				<outputCacheSettings>
+				    <outputCacheProfiles>
+				        <add name="Cache1Hour" duration="3600" varyByParam="none"/>
+				    </outputCacheProfiles>
+				</outputCacheSettings>
+				</caching>
+
+
+
+		- controller
+
+
+
+				using System;
+				using System.Web.Mvc;
+				
+				namespace MvcApplication1.Controllers
+				{
+				    public class ProfileController : Controller
+				    {
+				        [OutputCache(CacheProfile="Cache1Hour")]
+				        public string Index()
+				        {
+				            return DateTime.Now.ToString("T");
+				        }
+				    }
+				}
+
+
+
 - implement [data caching](https://msdn.microsoft.com/en-us/library/dd997357.aspx "https://msdn.microsoft.com/en-us/library/dd997357.aspx"), 
 - implement [HTTP caching](http://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/ "http://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/"), 
 - implement [Azure caching](https://blogs.msdn.microsoft.com/webdev/2013/11/30/instant-azure-caching-with-mvc/ "https://blogs.msdn.microsoft.com/webdev/2013/11/30/instant-azure-caching-with-mvc/")
@@ -358,34 +445,34 @@ Some ways to differentiate when to use which:
 		- None. The service does not validate the client.
 	- Config example
 
-~~~
-	<bindings>
-	  <netTcpBinding>
-	    <binding name="SecureService_Tcp"
-	      …
-	      <security mode="Transport">
-	        <transport clientCredentialType="Windows"
-	                   protectionLevel="EncryptAndSign" />
-	        <message clientCredentialType="Windows" />
-	      </security>
-	    </binding>
-	  </netTcpBinding>
-	  <wsHttpBinding>
-	    <binding name="SecureService_WsHttp"
-	      …
-	      <security mode="Message">
-	        <transport clientCredentialType="Windows"
-	                   proxyCredentialType="None"
-	                   realm="" />
-	        <message clientCredentialType="Windows"
-	                 negotiateServiceCredential="true"
-	                 algorithmSuite="Default"
-	                 establishSecurityContext="true" />
-	      </security>
-	    </binding>
-	  </wsHttpBinding>
-	</bindings>
-~~~
+
+			<bindings>
+			  <netTcpBinding>
+			    <binding name="SecureService_Tcp"
+			      …
+			      <security mode="Transport">
+			        <transport clientCredentialType="Windows"
+			                   protectionLevel="EncryptAndSign" />
+			        <message clientCredentialType="Windows" />
+			      </security>
+			    </binding>
+			  </netTcpBinding>
+			  <wsHttpBinding>
+			    <binding name="SecureService_WsHttp"
+			      …
+			      <security mode="Message">
+			        <transport clientCredentialType="Windows"
+			                   proxyCredentialType="None"
+			                   realm="" />
+			        <message clientCredentialType="Windows"
+			                 negotiateServiceCredential="true"
+			                 algorithmSuite="Default"
+			                 establishSecurityContext="true" />
+			      </security>
+			    </binding>
+			  </wsHttpBinding>
+			</bindings>
+
 - WCF Authorization
 	- Authorization Options
 		- Role-based. Access to a service and to operations of the service is based on the user’s role. 
@@ -418,23 +505,23 @@ Some ways to differentiate when to use which:
 	- Custom TokenHandler managed class, derived from `SecurityTokenHandler`
 		- Override the `CanValidateToken()` and `ValidateToken()` methods for the TokenHandler to be used and to properly parse the custom Token class, whose signature can then be validated
 	- Custom TokenHandler needs to be added to app.config (Example):
-~~~
-<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <configSections>
-    <!-- Registers the microsoft.IdentityModel configuration section -->
-    <section name="microsoft.identityModel" type="Microsoft.IdentityModel.Configuration.MicrosoftIdentityModelSection, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
-  </configSections>
-  <microsoft.identityModel>
-    <service>
-      <securityTokenHandlers>
-        <remove type="Microsoft.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
-        <add type="SimpleCustomSecurityTokenHandler.CustomUserNamePasswordValidatorSecurityTokenHandler, SimpleCustomSecurityTokenHandler"/>
-      </securityTokenHandlers>
-    </service>
-  </microsoft.identityModel>
-</configuration>
-~~~
+
+			<?xml version="1.0" encoding="utf-8" ?>
+			<configuration>
+			  <configSections>
+			    <!-- Registers the microsoft.IdentityModel configuration section -->
+			    <section name="microsoft.identityModel" type="Microsoft.IdentityModel.Configuration.MicrosoftIdentityModelSection, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+			  </configSections>
+			  <microsoft.identityModel>
+			    <service>
+			      <securityTokenHandlers>
+			        <remove type="Microsoft.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+			        <add type="SimpleCustomSecurityTokenHandler.CustomUserNamePasswordValidatorSecurityTokenHandler, SimpleCustomSecurityTokenHandler"/>
+			      </securityTokenHandlers>
+			    </service>
+			  </microsoft.identityModel>
+			</configuration>
+
 (Note both the Remove and Add nodes specified, which prevents the default handler from executing before the custom handler can take action.)
 
 - handle token formats (for example, oAuth, OpenID, Microsoft Account, Google, Twitter, and Facebook) for SAML and SWT tokens
