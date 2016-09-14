@@ -309,7 +309,7 @@ Some ways to differentiate when to use which:
 - authorize roles programmatically
 	- `AuthorizeAttribute`
 		- Decorate controllers and methods, specifying roles that have access
-		- Limited to roles 
+		- Roles or Users
 - create custom role providers
 	- Implement with `RoleProviderBase`
 - implement [WCF service authorization](https://msdn.microsoft.com/en-us/library/ff405740.aspx "https://msdn.microsoft.com/en-us/library/ff405740.aspx")
