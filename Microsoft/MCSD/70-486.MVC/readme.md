@@ -169,8 +169,6 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 		- controller
 
-
-
 				using System;
 				using System.Web.Mvc;
 				
@@ -349,7 +347,12 @@ Some ways to differentiate when to use which:
 
 ###Prevent and troubleshoot runtime issues
 
-- Troubleshoot performance, security, and errors; 
+- Troubleshoot performance, security, and errors:
+	- Performance profiling options (wizard):
+		- CPU sampling (recommended) - minimal impact to application
+		- Instrumentation - more invasive to working application
+		- .NET memory allocation (sampling)
+		- Resource contention data (concurrency) 
 - implement tracing, logging (including using attributes for logging), and debugging (including IntelliTrace); 
 - enforce conditions by using code contracts; 
 - enable and configure health monitoring (including Performance Monitor)
