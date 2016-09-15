@@ -353,7 +353,7 @@ Some ways to differentiate when to use which:
 		- Instrumentation - more invasive to working application
 		- .NET memory allocation (sampling)
 		- Resource contention data (concurrency) 
-- implement tracing, logging (including using attributes for logging), and debugging (including IntelliTrace); 
+- implement tracing, logging (including using attributes for logging), and debugging (including [IntelliTrace](https://msdn.microsoft.com/en-us/library/dd264944(v=vs.120).aspx "https://msdn.microsoft.com/en-us/library/dd264944(v=vs.120).aspx")); 
 - enforce conditions by using code contracts; 
 - enable and configure health monitoring (including Performance Monitor)
 
