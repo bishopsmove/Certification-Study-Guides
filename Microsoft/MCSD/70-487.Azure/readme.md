@@ -314,6 +314,24 @@ Anything else listed additionally is based on my own observations. Links listed 
 ##Deploying web applications and services (15-20%)
 
 - Design a deployment strategy
+	- Simple: Xcopy - for files only
+	- Complex: Web Deploy - Files, config, registry, database, PowerShell
+	- Scale-out options: web farm, session management, load balancing
+	- Continuous Integration\Deployment: Build Server
+	- Azure:
+		- Delete and redeploy
+			- Incurs downtime
+			- Required for changes to endpoints, firewall rules or certificates
+		- In-place update
+			- No downtime
+			- Requires upgrade domains to be configured
+			- During upgrade process, different versions of site are running concurrently.  This condition must be accounted for, e.g. db schema change
+		- Virtual IP (VIP) Swap
+			- No downtime
+			- Makes use on Prod and Staging environments (specifically their IPs)
+			- Upload to Staging (via D&R or In-place update), test, then "promote" Staging and "demote" Prod, effectively swapping their Virtual IPs
+			- During swap process, remnant connections will likely be affected
+			- Once swap is complete, Staging will now incur cost until deleted
 - Create an IIS install package
 -  deploy to web farms
 -  deploy a web application by using XCopy
