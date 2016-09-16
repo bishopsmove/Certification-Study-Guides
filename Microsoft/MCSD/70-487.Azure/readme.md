@@ -333,13 +333,21 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  transform web.config by using XSLT (for example, across development, test, and production/release environments)
 -  configure Azure configuration settings
 - Manage packages by using NuGet
+	- Visual Studio GUI Manager
+	- Package Manager Console
 - Create and configure a NuGet package
 	- `nuget spec` : creates the .nuspec manifest file, which can then be updated with all relevant information
 	- create lib, content & tools folders (as needed) and populate with needed files
 	- `nuget pack {yourPackage}.nuspec` : creates the actual package that can then be uploaded to a NuGet source
 	- `nuget push {yourPackage}.nupkg` : publishes the package to the configured source server
 -  install and update an existing NuGet package
+	- Visual Studio GUI Manager
+	- Package Manager Console
+		- Install-Package
+		- Update-Package
 -  connect to a local repository cache for NuGet, set up your own package repository
+	-  Local directory
+		-  In VS, under Tools/Options then NuGet Package Manager/Package Sources, you can add a new source with a name and the path to the local directory
 	-  Internal server option
 		-  Create empty ASP.NET web app project
 		-  Install NuGet.Server package
