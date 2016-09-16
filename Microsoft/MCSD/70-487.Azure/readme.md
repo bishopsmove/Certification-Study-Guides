@@ -371,4 +371,4 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - ASP.NET Web Deployment using Visual Studio: Introduction
 - How to: Create a Web Deployment Package in Visual Studio
-- Installing NuGet
+- Installing [NuGet](https://www.nuget.org/ "https://www.nuget.org/")
