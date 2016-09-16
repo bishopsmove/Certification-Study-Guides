@@ -334,9 +334,17 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  configure Azure configuration settings
 - Manage packages by using NuGet
 - Create and configure a NuGet package
+	- `nuget spec` : creates the .nuspec manifest file, which can then be updated with all relevant information
+	- create lib, content & tools folders (as needed) and populate with needed files
+	- `nuget pack {yourPackage}.nuspec` : creates the actual package that can then be uploaded to a NuGet source
+	- `nuget push {yourPackage}.nupkg` : publishes the package to the configured source server
 -  install and update an existing NuGet package
 -  connect to a local repository cache for NuGet, set up your own package repository
-	-  EXAMPLE
+	-  Internal server option
+		-  Create empty ASP.NET web app project
+		-  Install NuGet.Server package
+		-  Set API key in web.config (optional)
+		-  Deploy to IIS server
 - Create, configure, and publish a web package
 - Create an IIS InstallPackage
 -  configure the build process to output a web package
