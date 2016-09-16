@@ -48,3 +48,33 @@ Anything else listed additionally is based on my own observations. Links listed 
 - [AWS Video library](https://aws.amazon.com/training/intro_series/ "https://aws.amazon.com/training/intro_series/") 
 - [AWS Cloud Computing Services Whitepapers](http://aws.amazon.com/whitepapers/ "http://aws.amazon.com/whitepapers/")
 - [AWS Architecture Center](http://aws.amazon.com/architecture/ "http://aws.amazon.com/architecture/")
+
+
+###Domain 1.0: Designing highly available, cost-efficient, fault-tolerant, scalable systems
+
+1.1	Identify and recognize cloud architecture considerations, such as
+fundamental components and effective designs.
+
+Content may include the following:
+
+- How to design cloud services
+- Planning and design
+- Monitoring and logging
+- Familiarity with:
+	- Best practices for AWS architecture
+	- Developing to client specifications, including pricing/cost (e.g., on Demand vs. Reserved vs. Spot; RTO and RPO DR Design)
+	- Architectural trade-off decisions (e.g., high availability vs. cost, Amazon Relational Database Service (RDS) vs. installing your own database on Amazon Elastic Compute Cloud (EC2))
+	- Hybrid IT architectures (e.g., Direct Connect, Storage Gateway, VPC, Directory Services)
+	- Elasticity and scalability (e.g., Auto Scaling, SQS, ELB, CloudFront)
+
+###Domain 2.0: Implementation/Deployment
+
+2.1 Identify the appropriate techniques and methods using Amazon EC2, Amazon S3, AWS Elastic Beanstalk, AWS CloudFormation, AWS OpsWorks, Amazon Virtual Private Cloud (VPC), and AWS Identity and Access Management (IAM) to code and implement a cloud solution.
+
+Content may include the following:
+
+- Configure an Amazon Machine Image (AMI)
+- Operate and extend service management in a hybrid IT architecture
+- Configure services to support compliance requirements in the cloud
+- Launch instances across the AWS global infrastructure
+- Configure IAM policies and best practices
