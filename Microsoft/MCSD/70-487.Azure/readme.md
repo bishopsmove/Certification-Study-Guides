@@ -333,7 +333,28 @@ Anything else listed additionally is based on my own observations. Links listed 
 			- During swap process, remnant connections will likely be affected
 			- Once swap is complete, Staging will now incur cost until deleted
 - Create an IIS install package
+	1. Create a *Publish profile* using the **Publish Web** wizard in Visual Studio
+		1. Publish method: **Web Deploy Package** 
+		2. Define the package location (including name of .zip file)
+		3. Specify the IIS site name, though this can be overridden during install
+		4. Settings: Specify the configuration and the default connection string for that confirguration
+	2. Click *Publish* to create the package. The resulting .zip file will contain the following files:
+	   - ***projectname*.deploy.cmd** - Helper command-line batch file that invokes Web Deploy in order to install the application on the destination server locally or remotely.
+	   - ***projectname*.SetParameters.xml** - contains parameters that are passed to Web Deploy on the destination server. 
+	   - ***projectname*.SourceManifest.xml** - contains settings that Visual Studio used to create the deployment package.
+    3. Advanced options (Project Properties \ Package/Publish Web tab)
+       - Specify physical IIS path
+       - Specify password for IIS settings 
 -  deploy to web farms
+	-  Requirements (for all servers in the farm):
+		-  Web Deployment Tool's Remote Agent Service must be installed and running
+		-  HTTP port must be allowed by their firewall
+		-  Must all be members of same domain and the account used for synchronization must have administrative rights on all servers in the farm.
+	-  Deploy IIS package to one of the servers in the farm
+	-  Establish this server as the "model computer" by making app or site configuration changes
+	-  Using *msdeploy.exe*, sync each server in the farm to the model, either via the package name or "webserver" - which will sync with the entire IIS web server (Examples):
+		-  `msdeploy.exe -verb:sync -source:package={packageName} -dest:auto,computername={remoteServer} {MSDeployOperationSettingOptions}`
+		-  `msdeploy.exe -verb:sync -source:package=webServer -dest:auto,computername={remoteServer} {MSDeployOperationSettingOptions}`
 -  deploy a web application by using XCopy
 -  automate a deployment from TFS or Build Server
 - Choose a deployment strategy for an Azure web application
