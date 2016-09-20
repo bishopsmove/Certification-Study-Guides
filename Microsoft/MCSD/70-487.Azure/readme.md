@@ -393,7 +393,13 @@ Anything else listed additionally is based on my own observations. Links listed 
 		-  Set API key in web.config (optional)
 		-  Deploy to IIS server
 - Create, configure, and publish a web package
-- Create an IIS InstallPackage
+- Create an [IIS InstallPackage](http://www.iis.net/learn/publish/using-web-deploy/export-a-package-through-iis-manager "http://www.iis.net/learn/publish/using-web-deploy/export-a-package-through-iis-manager")
+	1. Install project as web application to local IIS
+	2. In IIS Management Console, select web application and export
+	3. Under Manage Components, choose the providers needed for deployment (i.e. dbFullSql, appPoolConfig, etc) and configure accordingly for deployment environment.
+	4. Select and add/modify parameters as needed
+	5. specify path and filename to save the package
+	6. Click finish to complete the process.
 -  configure the build process to output a web package
 	-  EXAMPLE
 -  apply pre- and post- condition actions to ensure that transformations are correctly applied
