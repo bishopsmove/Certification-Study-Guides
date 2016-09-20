@@ -400,7 +400,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 	4. Select and add/modify parameters as needed
 	5. specify path and filename to save the package
 	6. Click finish to complete the process.
--  configure the build process to output a web package
+-  configure [the build process to output a web package](http://www.asp.net/web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects "http://www.asp.net/web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects")
 	-  EXAMPLE
 -  apply pre- and post- condition actions to ensure that transformations are correctly applied
 -  include appropriate assets (web content, certificates)
