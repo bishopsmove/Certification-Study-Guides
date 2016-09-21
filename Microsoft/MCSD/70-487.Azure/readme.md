@@ -433,7 +433,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 			      </assemblyBinding>
 			   </runtime>
 			</configuration>
-
+	
+	- Alternative
+		- Using NuGet, you can run Add-BindingRedirect after the project has been built. This will update the .config file automatically.
 ####Preparation resources
 
 - ASP.NET Web Deployment using Visual Studio: Introduction
