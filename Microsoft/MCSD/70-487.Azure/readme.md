@@ -406,6 +406,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  include appropriate assets (web content, certificates)
 - Share assemblies between multiple applications and servers
 - Prepare the environment for use of assemblies across multiple servers (interning)
+	- [aspnet_intern.exe](https://www.shanebart.com/aspnet-assembly-interning/ "https://www.shanebart.com/aspnet-assembly-interning/")
 -  sign assemblies by using a strong name
 -  deploy assemblies to the global assembly cache
 -  implement assembly versioning
