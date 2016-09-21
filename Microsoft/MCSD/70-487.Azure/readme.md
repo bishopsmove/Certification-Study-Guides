@@ -12,6 +12,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Pluralsight [recommended videos for 70-487](http://blog.pluralsight.com/developing-microsoft-azure-and-web-services-microsoft-exam-70-487 "http://blog.pluralsight.com/developing-microsoft-azure-and-web-services-microsoft-exam-70-487")
 - MS Virtual Academy - [Applications on Azure: Putting All the Pieces Together](https://mva.microsoft.com/en-US/training-courses/applications-on-azure-putting-all-the-pieces-together-14429 "https://mva.microsoft.com/en-US/training-courses/applications-on-azure-putting-all-the-pieces-together-14429") (Updated tutorial from *Developing Windows Azure and Web Services Jump Start*)
 - Barbarian Meets Coding - [Notes for 70-487](https://www.barbarianmeetscoding.com/wiki/70-487-azure-and-web-services-certification-study-guide/ "https://www.barbarianmeetscoding.com/wiki/70-487-azure-and-web-services-certification-study-guide/")
+- [Shane Bart's 70-487 Mind Map](https://i0.wp.com/www.shanebart.com/wp-content/uploads/2016/03/70-487.png?ssl=1 "https://i0.wp.com/www.shanebart.com/wp-content/uploads/2016/03/70-487.png?ssl=1")
 
 ##Accessing data (20-25%)
 
@@ -367,7 +368,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Switch from production/release mode to debug mode
 -  use SetParameters to set up an IIS app pool
 -  set permissions and passwords
--  enable and monitor ASP.NET App Suspend
+-  enable and monitor [ASP.NET App Suspend](https://blogs.msdn.microsoft.com/webdev/2013/10/09/enable-and-monitor-asp-net-app-suspend-on-windows-server-2012-r2/ "https://blogs.msdn.microsoft.com/webdev/2013/10/09/enable-and-monitor-asp-net-app-suspend-on-windows-server-2012-r2/")
+	- To enable: In Advanced Settings for ApplicationPool, set Idle Time-out Action to "Suspend"
+	- To monitor: In the Application event log, search for event 2310 to confirm that a worker process timed-out and was suspended.
 -  configure WCF endpoints (including HTTPS protocol mapping), bindings, and behaviors
 -  transform web.config by using XSLT (for example, across development, test, and production/release environments)
 -  configure Azure configuration settings
@@ -407,11 +410,29 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Share assemblies between multiple applications and servers
 - Prepare the environment for use of assemblies across multiple servers (interning)
 	- [aspnet_intern.exe](https://www.shanebart.com/aspnet-assembly-interning/ "https://www.shanebart.com/aspnet-assembly-interning/")
+		- `aspnet_intern [-mode analyze|exec|clean|query] [-sourcedir <input source path>] [-interndir <output target interned path>] [-minrefcount 3]`
 -  sign assemblies by using a strong name
 -  deploy assemblies to the global assembly cache
 -  implement assembly versioning
 -  create an assembly manifest
 -  configure assembly binding redirects (for example, from MVC4 to MVC5)
+	-  Example
+
+			<configuration>
+			   <runtime>
+			      <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			         <dependentAssembly>
+			            <assemblyIdentity name="myAssembly"
+			                              publicKeyToken="32ab4ba45e0a69a1"
+			                              culture="neutral" />
+			            <bindingRedirect oldVersion="1.0.0.0"
+			                             newVersion="2.0.0.0"/>
+			            <codeBase version="2.0.0.0"
+			                      href="http://www.litwareinc.com/myAssembly.dll"/>
+			         </dependentAssembly>
+			      </assemblyBinding>
+			   </runtime>
+			</configuration>
 
 ####Preparation resources
 
