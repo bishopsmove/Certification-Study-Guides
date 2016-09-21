@@ -269,6 +269,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 - Design a Web API
 - Define HTTP resources with HTTP actions
+	- [Http<Action> vs AcceptVerbs](http://stackoverflow.com/a/16034262/885317 "http://stackoverflow.com/a/16034262/885317")
 -  plan appropriate URI space, and map URI space using routing
 -  choose appropriate HTTP method (get, put, post, delete) to meet requirements
 -  choose appropriate format (Web API formats) for responses to meet requirements
@@ -284,6 +285,53 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  implement asynchronous and synchronous actions
 -  implement streaming actions
 	-  EXAMPLE
+	  
+			public HttpResponseMessage Get([FromUri] int accountId)
+		    {
+		        HttpResponseMessage response = Request.CreateResponse();
+		
+		        // Create push content with a delegate that will get called when it is time to write out 
+		        // the response.
+		        response.Content = new PushStreamContent(
+		            async (outputStream, httpContent, transportContext) =>
+		            {
+		                try
+		                {
+		                    // Execute the command and get a reader
+		                    using (var reader = GetMetadataListReader(accountId))
+		                    {
+		
+		                        // Read rows asynchronously, put data into buffer and write asynchronously
+		                        while (await reader.ReadAsync())
+		                        {
+		                            var rec = MapRecord(reader);
+		
+		                            var str = await JsonConvert.SerializeObjectAsync(rec);
+		
+		                            var buffer = UTF8Encoding.UTF8.GetBytes(str);
+		
+		                            // Write out data to output stream
+		                            await outputStream.WriteAsync(buffer, 0, buffer.Length);
+		                        }
+		                    }
+		                }
+		                catch(HttpException ex)
+		                {
+		                    if (ex.ErrorCode == -2147023667) // The remote host closed the connection. 
+		                    {
+		                        return;
+		                    }
+		                }
+		                finally
+		                {
+		                    // Close output stream as we are done
+		                    outputStream.Close();
+		                }
+		            });
+		
+		        return response;
+		    }
+
 -  implement SignalR
 -  test Web API web services
 - Secure a Web API
