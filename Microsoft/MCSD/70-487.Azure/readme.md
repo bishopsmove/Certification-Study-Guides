@@ -139,9 +139,22 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Create and implement a WCF Data Services service
 	- Address resources
 	-  implement filtering
-		-  EXAMPLE
+		1. Enable access to the data service by using `config.SetEntitySetAccessRule()` in the `InitializeService()` method of the Data Service class.
+		2. Enable the ServiceOperation access by using `config.SetServiceOperationAccessRule()`, also in the `InitializeService()` method of the Data Service class.
+		3. This now allows a client to query via Resource URIs:
+			`http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=ShippedDate gt datetime'1997-09-22T00:00:00'`
 	-  create a query expression
+
+			[QueryInterceptor("Products")]
+			public Expression<Func<Product, bool>> OnReadProducts()
+			{
+			    return o => o.Discontinued == false;
+			}
 	-  access payload formats (including JSON)
+		-  Default is ATOM (XML wrapped with metadata)
+			-  With AJAX WCF, the default format is XML and default verb is HTTP POST
+		-  On the Endpoint behavior config (or the Endpoint itself, either by config file or in code), set the AutomaticFormatSelectionEnabled property to true. This allows the WCF infrastructure to determine the best format, based on the Accept headers of the request.
+		-  Formats can also be specified explicitly on a per-endpoint-method basis
 	-  use data service interceptors and service operators
 		-  EXAMPLE
 - Manipulate XML data structures
@@ -205,6 +218,39 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  implement message inspectors
 -  implement asynchronous operations in the service
 - Configure WCF services by using configuration settings
+	- EXAMPLE
+
+			<?xml version="1.0" encoding="utf-8"?>
+			<configuration>
+		    <system.serviceModel>
+		        <bindings>
+		            <basicHttpBinding>
+		                <binding name="BasicHttpBinding_IService1" closeTimeout="00:01:00"
+		                    openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00"
+		                    allowCookies="false" bypassProxyOnLocal="false" 
+		                    hostNameComparisonMode="StrongWildcard" maxBufferSize="65536" 
+		                    maxBufferPoolSize="524288" maxReceivedMessageSize="65536"
+		                    messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
+		                    useDefaultWebProxy="true">
+		                    <readerQuotas maxDepth="32" maxStringContentLength="8192" 
+		                        maxArrayLength="16384" maxBytesPerRead="4096"
+		                        maxNameTableCharCount="16384" />
+		                    <security mode="None">
+		                        <transport clientCredentialType="None" proxyCredentialType="None"
+		                            realm="" />
+		                        <message clientCredentialType="UserName" algorithmSuite="Default" />
+		                    </security>
+		                </binding>
+		            </basicHttpBinding>
+		        </bindings>
+		        <client>
+		            <endpoint address="http://localhost:36906/Service1.svc" binding="basicHttpBinding"
+		                bindingConfiguration="BasicHttpBinding_IService1" contract="IService1"
+		                name="BasicHttpBinding_IService1" />
+		        </client>
+		    </system.serviceModel>
+</configuration>
+
 - Configure service behaviors
 	- EXAMPLE
 -  configure service endpoints
@@ -212,7 +258,29 @@ Anything else listed additionally is based on my own observations. Links listed 
 	-  EXAMPLE
 -  specify a service contract
 -  expose service metadata (XSDs, WSDL, and metadata exchange endpoint)
-	-  EXAMPLE
+	- EXAMPLE
+
+			<services>
+				<service name="Metadata.Example.SimpleService"
+      					behaviorConfiguration="SimpleServiceBehavior">
+
+	    		<endpoint address=""
+		              binding="wsHttpBinding"
+		              contract="Metadata.Example.ISimpleService" />
+
+			    <endpoint address="mex"
+			              binding="mexHttpBinding"
+			              contract="IMetadataExchange" />
+  				</service>
+			</services>
+			<behaviors>
+				<serviceBehaviors>
+					<behavior name="SimpleServiceBehavior">
+					  <serviceMetadata httpGetEnabled="True" policyVersion="Policy15" />
+					</behavior>
+				</serviceBehaviors>
+			</behaviors>
+
 -  configure message compression and encoding
 - Configure WCF services by using the API
 -  WCF routing and discovery features
@@ -352,6 +420,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Consume Web API web services
 - Consume Web API services by using HttpClient synchronously and asynchronously
 -  send and receive requests in different formats (JSON/HTML/etc.)
+	-  Set the ServiceBehavior or ServiceEndpoint AutomaticFormatSelectionEnabled to true.
+	-  Or inspect the request's Accept header to to determine the preferred format type
+	-  Or establish a separate endpoint method to output the preferred format. A IRequestHandler can be used to determine a format request and forward to the correct endpoint method.
 -  request batching
 
 ####Preparation resources
