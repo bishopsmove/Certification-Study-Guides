@@ -415,8 +415,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  self-host a Web API in your own process (a Windows service) including Open Web Interface for .NET (OWIN)
 -  host services in an Azure worker role
 -  restrict message size
--  configure the host server for streaming
-	-  EXAMPLE
+-  [configure the host server for streaming](https://msdn.microsoft.com/en-us/library/ee960144(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ee960144(v=vs.110).aspx")
+	-  When using WCF with ASP.Net, WCF limits the HTTP message size to 64k by default. To stream large amounts of data, reset the maxReceivedMessageSize setting in the config to an appropriate size. Also, set the transferMode to "Streamed" to prevent WCF from buffering either\both the request\response.
+	-  Utilize the `PushStreamContent` class
 - Consume Web API web services
 - Consume Web API services by using HttpClient synchronously and asynchronously
 -  send and receive requests in different formats (JSON/HTML/etc.)
