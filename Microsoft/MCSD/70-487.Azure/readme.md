@@ -308,7 +308,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Implement one way, request/reply, streaming, and duplex communication
 -  implement Azure Service Bus and Azure Queues
 - Host and manage services
-- Manage services concurrency 
+- Manage [services concurrency](http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417 "http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417") 
 	- single
 		- EXAMPLE 
 	- multiple
@@ -317,7 +317,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 		- EXAMPLE
 -  create service hosts
 -  choose a hosting mechanism
--  choose an instancing mode 
+-  choose an [instancing mode](http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417 "http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417") 
 	-  per call
 		-  EXAMPLE
 	-  per session
@@ -333,6 +333,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Windows Communication Foundation Services and WCF Data Services in Visual Studio
 - <bindings>
 - Forward-Compatible data contracts
+- [Sessions, Instancing, and Concurrency](https://msdn.microsoft.com/en-us/library/ms731193(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms731193(v=vs.110).aspx")
 
 ##Creating and consuming Web API-based services (15-20%)
 
