@@ -575,8 +575,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- [aspnet_intern.exe](https://www.shanebart.com/aspnet-assembly-interning/ "https://www.shanebart.com/aspnet-assembly-interning/")
 		- `aspnet_intern [-mode analyze|exec|clean|query] [-sourcedir <input source path>] [-interndir <output target interned path>] [-minrefcount 3]`
 -  sign assemblies by using a strong name
+	-  create the strong name key: `sn -k sgKey.snk`
+	-  Assign the key to the assembly via Assembly Linker:
+		-  `al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk`
 -  deploy assemblies to the global assembly cache
--  implement assembly versioning
+-  implement assembly versioning (only applies to assemblies with strong names)
 -  create an assembly manifest
 -  configure assembly binding redirects (for example, from MVC4 to MVC5)
 	-  Example
