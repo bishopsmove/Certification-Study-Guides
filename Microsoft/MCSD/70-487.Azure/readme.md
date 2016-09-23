@@ -115,6 +115,35 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- [TransactionScope](https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx "https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx")
 		- Considered part of an implicit programming model
 		- The more recommended choice (by MS)
+		- With Entity Framework, use the `Database.BeginTransaction()`
+
+				using (var context = new BloggingContext()) 
+	            { 
+	                using (var dbContextTransaction = context.Database.BeginTransaction()) 
+	                { 
+	                    try 
+	                    { 
+	                        context.Database.ExecuteSqlCommand( 
+	                            @"UPDATE Blogs SET Rating = 5" + 
+	                                " WHERE Name LIKE '%Entity Framework%'" 
+	                            ); 
+	 
+	                        var query = context.Posts.Where(p => p.Blog.Rating >= 5); 
+	                        foreach (var post in query) 
+	                        { 
+	                            post.Title += "[Cool Blog]"; 
+	                        } 
+	 
+	                        context.SaveChanges(); 
+	 
+	                        dbContextTransaction.Commit(); 
+	                    } 
+	                    catch (Exception) 
+	                    { 
+	                        dbContextTransaction.Rollback(); 
+	                    } 
+	                } 
+	            }
 	- Manage transactions by using the API from System.Transactions namespace
 		- use TransactionScope in `Using` block, with final command `TransactionScope.Complete()` executed.
 	-  implement distributed transactions
