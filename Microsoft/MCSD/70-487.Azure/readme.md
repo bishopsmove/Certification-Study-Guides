@@ -189,9 +189,41 @@ Anything else listed additionally is based on my own observations. Links listed 
 		-  EXAMPLE
 - Manipulate XML data structures
 	- Read filter, create, modify XML data structures
+		- Utilize the Message class, which is a SOAP object wrapper.
+			- Message read access methods are implemented with XmlReader
+			- Message write access methods are implemented with XmlWriter
 	-  Manipulate XML data by using:
 		- XMLReader
-			- EXAMPLE
+			- [EXAMPLE](https://msdn.microsoft.com/en-us/library/ms751474(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms751474(v=vs.110).aspx")
+
+					string workFile;
+					
+					workFile = Path.GetTempFileName();
+					
+					using (FileStream stream = File.Create(workFile))
+					{
+					  XmlWriterSettings settings;
+					
+					  settings = new XmlWriterSettings { Indent = true, Encoding = Encoding.UTF8 };
+					
+					  using (XmlWriter writer = XmlWriter.Create(stream, settings))
+					  {
+					    writer.WriteStartDocument(true);
+					
+					      writer.WriteStartElement("uri");
+					      if (this.LastCrawled.HasValue)
+					        writer.WriteAttributeString("lastCrawled", this.LastCrawled.Value.ToBinary());
+					      writer.WriteAttributeString("includeSubDomains", _includeSubDomains);
+					      writer.WriteValue(this.Uri);
+					      writer.WriteEndElement();
+					
+					    writer.WriteEndDocument();
+					  }
+					}
+
+					File.Copy(workFile, fileName, true);
+					File.Delete(workFile);
+
 		- XMLWriter
 			- EXAMPLE
 		- XMLDocument
