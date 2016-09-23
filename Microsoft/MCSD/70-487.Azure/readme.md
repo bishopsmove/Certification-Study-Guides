@@ -309,21 +309,62 @@ Anything else listed additionally is based on my own observations. Links listed 
 -  implement Azure Service Bus and Azure Queues
 - Host and manage services
 - Manage [services concurrency](http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417 "http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417") 
-	- single
-		- EXAMPLE 
-	- multiple
-		- EXAMPLE 
-	- reentrant
+	- Single : only one thread can access service instance. This is default behavior.
 		- EXAMPLE
+
+				[ServiceBehavior(InstanceContextMode=InstanceContextMode.PerCall, 
+				                 ConcurrencyMode = ConcurrencyMode.Single)]
+				public class HelloWorldService : IHelloWorldService
+				{
+				}
+ 
+	- Multiple : multiple threads can access service instance.
+		- EXAMPLE
+
+				[ServiceBehavior(InstanceContextMode=InstanceContextMode.PerCall, 
+				                 ConcurrencyMode = ConcurrencyMode.Multiple)]
+				public class HelloWorldService : IHelloWorldService
+				{
+				}
+  
+	- Reentrant : one thread can access service but but it can release the lock and allow other thread to use the instance while first thread will be blocked. This is used in callback scenario.
+		- EXAMPLE
+
+				[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
+				public class HelloWorldService : IHelloWorldService
+				{
+				}
+ 
 -  create service hosts
 -  choose a hosting mechanism
 -  choose an [instancing mode](http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417 "http://stackoverflow.com/questions/3657858/how-does-concurrency-work-in-wcf#3658417") 
 	-  per call
-		-  EXAMPLE
+		-  EXAMPLE: typical stateless scenario. Multiple concurrent calls are allowed.
+
+				[ServiceBehavior(InstanceContextMode=InstanceContextMode.PerCall, 
+				                 ConcurrencyMode = ConcurrencyMode.Single)]
+				public class HelloWorldService : IHelloWorldService
+				{
+				}
+ 
 	-  per session
-		-  EXAMPLE
+		-  EXAMPLE : multiple concurrent calls are allowed. Multiple calls from each proxy can access same instance at the same time. You have to do manual synchronization of access to shared fields in the service instance.
+
+				[ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession, 
+				                 ConcurrencyMode = ConcurrencyMode.Multiple)]
+				public class HelloWorldService : IHelloWorldService
+				{
+				}
+ 
 	-  singleton
-		-  EXAMPLE
+		-  EXAMPLE : multiple concurrent calls are allowed. All calls access same instance at the same time. You have to do manual synchronization of access to shared fields in the service instance.
+
+				[ServiceBehavior(InstanceContextMode=InstanceContextMode.Single, 
+				                 ConcurrencyMode = ConcurrencyMode.Multiple)]
+				public class HelloWorldService : IHelloWorldService
+				{
+				}
+ 
 -  activate and manage a service by using AppFabric
 -  implement transactional services
 -  host services in an Azure worker role
