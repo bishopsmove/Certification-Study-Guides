@@ -92,7 +92,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 	- apply [cache policy](https://msdn.microsoft.com/en-us/library/system.runtime.caching.cacheitempolicy.aspx#Anchor_6 "https://msdn.microsoft.com/en-us/library/system.runtime.caching.cacheitempolicy.aspx#Anchor_6") (including expirations)
 		- Absolute Expirations
 		- Sliding Expirations
-	- CachItemPriority
+	- CachItem
+	- Priority
 	- CacheChangeMonitor
 		- CacheEntryChangeMonitor : base class
 		- FileChangeMonitor: specific file
@@ -556,6 +557,16 @@ Anything else listed additionally is based on my own observations. Links listed 
 	
 	- Alternative
 		- Using NuGet, you can run Add-BindingRedirect after the project has been built. This will update the .config file automatically.
+	- Probing PrivatePath
+		- Helps specify subdirectories where assemblies may reside
+
+				<configuration>
+				   <runtime>
+				      <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+				         <probing privatePath="bin;bin2\subbin;bin3"/>
+				      </assemblyBinding>
+				   </runtime>
+				</configuration>
 ####Preparation resources
 
 - ASP.NET Web Deployment using Visual Studio: Introduction
