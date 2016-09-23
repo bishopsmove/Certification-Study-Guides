@@ -225,7 +225,75 @@ Anything else listed additionally is based on my own observations. Links listed 
 					File.Delete(workFile);
 
 		- XMLWriter
-			- EXAMPLE
+			- [EXAMPLE](http://jayeshsorathia.blogspot.com/2012/07/net-tip-c-tip-create-xml-file-using.html "http://jayeshsorathia.blogspot.com/2012/07/net-tip-c-tip-create-xml-file-using.html")
+
+					XmlWriterSettings objSetting = new XmlWriterSettings();
+			        objSetting.Indent = true;
+			        objSetting.NewLineOnAttributes = true;
+			        
+			        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			
+			
+			        using (XmlWriter objWriter = XmlWriter.Create(sb, objSetting))
+			        {
+			            //Note the artificial, but useful, indenting
+			            objWriter.WriteStartDocument();
+			
+			            objWriter.WriteStartElement("books");
+			
+			            ////////Start Book Element///////
+			            
+			            objWriter.WriteStartElement("book");
+			
+			            objWriter.WriteStartAttribute("ISBN");
+			            objWriter.WriteValue("asp1");
+			            objWriter.WriteEndAttribute();
+			
+			            objWriter.WriteStartElement("Title");
+			            objWriter.WriteValue("ASP.NET");
+			            objWriter.WriteEndElement();
+			
+			            objWriter.WriteElementString("ReleaseDate", "11/11/2010");
+			
+			            objWriter.WriteStartElement("Pages");
+			            objWriter.WriteValue(200);
+			            objWriter.WriteEndElement(); //price
+			
+			            objWriter.WriteEndElement(); //book
+			            ////////End Book Element///////
+			
+			
+			            ////////Another Element
+			
+			            ////////Start Book Element///////
+			            
+			            objWriter.WriteStartElement("book");
+			
+			            objWriter.WriteStartAttribute("ISBN");
+			            objWriter.WriteValue("c#2");
+			            objWriter.WriteEndAttribute();
+			
+			            objWriter.WriteStartElement("Title");
+			            objWriter.WriteValue("C#.NET");
+			            objWriter.WriteEndElement();
+			
+			            objWriter.WriteElementString("ReleaseDate", "10/11/2010");
+			
+			            objWriter.WriteStartElement("Pages");
+			            objWriter.WriteValue(500);
+			            objWriter.WriteEndElement(); 
+			
+			            objWriter.WriteEndElement(); //book
+			            ////////End Book Element///////
+			
+			
+			            
+			            objWriter.WriteEndElement(); //books
+			            objWriter.WriteEndDocument();
+			            
+			        }
+			
+			        File.WriteAllText(Server.MapPath("BooksList.xml"), sb.ToString());
 		- XMLDocument
 		- XPath
 		- LINQ to XML
