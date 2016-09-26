@@ -304,6 +304,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Transaction isolation levels
 - WCF Data Services
 - XML documents and data
+	- DateTimeOffset manipulation ([DateTimeOffset.Parse()](https://msdn.microsoft.com/en-us/library/bb504692(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/bb504692(v=vs.110).aspx") vs [XmlConvert.ToDateTimeOffset()](https://msdn.microsoft.com/en-us/library/bb558713(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/bb558713(v=vs.110).aspx"))
+	- Ignoring namespace definition when selecting nodes with [local-name()](http://stackoverflow.com/a/4402743/885317 "http://stackoverflow.com/a/4402743/885317")
 
 ##Querying and manipulating data by using Entity Framework (20-25%)
 
