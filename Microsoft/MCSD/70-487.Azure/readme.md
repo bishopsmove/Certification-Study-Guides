@@ -354,38 +354,72 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 			<?xml version="1.0" encoding="utf-8"?>
 			<configuration>
-		    <system.serviceModel>
-		        <bindings>
-		            <basicHttpBinding>
-		                <binding name="BasicHttpBinding_IService1" closeTimeout="00:01:00"
-		                    openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00"
-		                    allowCookies="false" bypassProxyOnLocal="false" 
-		                    hostNameComparisonMode="StrongWildcard" maxBufferSize="65536" 
-		                    maxBufferPoolSize="524288" maxReceivedMessageSize="65536"
-		                    messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
-		                    useDefaultWebProxy="true">
-		                    <readerQuotas maxDepth="32" maxStringContentLength="8192" 
-		                        maxArrayLength="16384" maxBytesPerRead="4096"
-		                        maxNameTableCharCount="16384" />
-		                    <security mode="None">
-		                        <transport clientCredentialType="None" proxyCredentialType="None"
-		                            realm="" />
-		                        <message clientCredentialType="UserName" algorithmSuite="Default" />
-		                    </security>
-		                </binding>
-		            </basicHttpBinding>
-		        </bindings>
-		        <client>
-		            <endpoint address="http://localhost:36906/Service1.svc" binding="basicHttpBinding"
-		                bindingConfiguration="BasicHttpBinding_IService1" contract="IService1"
-		                name="BasicHttpBinding_IService1" />
-		        </client>
-		    </system.serviceModel>
-</configuration>
+			    <system.serviceModel>
+			        <bindings>
+			            <basicHttpBinding>
+			                <binding name="BasicHttpBinding_IService1" closeTimeout="00:01:00"
+			                    openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00"
+			                    allowCookies="false" bypassProxyOnLocal="false" 
+			                    hostNameComparisonMode="StrongWildcard" maxBufferSize="65536" 
+			                    maxBufferPoolSize="524288" maxReceivedMessageSize="65536"
+			                    messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
+			                    useDefaultWebProxy="true">
+			                    <readerQuotas maxDepth="32" maxStringContentLength="8192" 
+			                        maxArrayLength="16384" maxBytesPerRead="4096"
+			                        maxNameTableCharCount="16384" />
+			                    <security mode="None">
+			                        <transport clientCredentialType="None" proxyCredentialType="None"
+			                            realm="" />
+			                        <message clientCredentialType="UserName" algorithmSuite="Default" />
+			                    </security>
+			                </binding>
+			            </basicHttpBinding>
+			        </bindings>
+			        <client>
+			            <endpoint address="http://localhost:36906/Service1.svc" binding="basicHttpBinding"
+			                bindingConfiguration="BasicHttpBinding_IService1" contract="IService1"
+			                name="BasicHttpBinding_IService1" />
+			        </client>
+			    </system.serviceModel>
+			</configuration>
 
 - Configure service behaviors
+	- [Behavior Merge](https://msdn.microsoft.com/en-us/library/ms733932(v=vs.110).aspx#Anchor_3 "https://msdn.microsoft.com/en-us/library/ms733932(v=vs.110).aspx#Anchor_3")
 	- EXAMPLE
+			<system.ServiceModel>
+			
+			   ...
+			
+				<behaviors>
+					<endpointBehaviors>
+						<behavior name="myBehavior">
+							<callbackDebug includeExceptionDetailInFaults="true" />
+						</behavior>
+					</endpointBehaviors>
+					<serviceBehaviors>
+						<behavior>
+							<serviceMetadata httpGetEnabled="true" />
+						</behavior>
+					</serviceBehaviors>
+				
+				</behaviors>
+			
+			</system.ServiceModel>
 -  configure service endpoints
+	-  EXAMPLE
+			<system.serviceModel>
+				<behaviors>
+				  ...
+				</behaviors>
+				<services>
+				 <service name="NewServiceType">
+				   <endpoint 
+				      address="myAddress3" behaviorConfiguration="myBehavior"
+				      binding="basicHttpBinding"
+				      contract=”MyContract” />
+				  </service>
+				</services>
+			</system.serviceModel>
 -  configure bindings including WebSocket bindings
 	-  EXAMPLE
 -  specify a service contract
