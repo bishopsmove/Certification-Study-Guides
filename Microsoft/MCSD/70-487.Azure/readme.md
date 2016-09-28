@@ -386,6 +386,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Configure service behaviors
 	- [Behavior Merge](https://msdn.microsoft.com/en-us/library/ms733932(v=vs.110).aspx#Anchor_3 "https://msdn.microsoft.com/en-us/library/ms733932(v=vs.110).aspx#Anchor_3")
 	- EXAMPLE
+
 			<system.ServiceModel>
 			
 			   ...
@@ -407,6 +408,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 			</system.ServiceModel>
 -  configure service endpoints
 	-  EXAMPLE
+
 			<system.serviceModel>
 				<behaviors>
 				  ...
@@ -454,6 +456,12 @@ Anything else listed additionally is based on my own observations. Links listed 
 		- [MtomMessageEncodingBindingElement](https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.mtommessageencodingbindingelement(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.mtommessageencodingbindingelement(v=vs.110).aspx")
 		- Custom encoding - Custom message encoder can be created, but they must implement the MessageEncodingBindingElement class.  
 - Configure WCF services by using the API
+	- EXAMPLE
+
+			using(ServiceHost host = new ServiceHost(typeof(CalculatorService)))
+			{
+			    host.AddServiceEndpoint(typeof(ICalculator),binding1, baseAddress);
+			}
 -  WCF routing and discovery features
 - Secure a WCF service
 - Implement 
