@@ -414,6 +414,11 @@ Anything else listed additionally is based on my own observations. Links listed 
 			</behaviors>
 
 -  configure message compression and encoding
+	-  Encoding ([MessageEncodingBindingElement](https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.messageencodingbindingelement(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.messageencodingbindingelement(v=vs.110).aspx"))
+		- [TextMessageEncodingBindingElement](https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.textmessageencodingbindingelement(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.textmessageencodingbindingelement(v=vs.110).aspx")
+		- [BinaryMessageEncodingBindingElement](https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.binarymessageencodingbindingelement(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.binarymessageencodingbindingelement(v=vs.110).aspx")
+		- [MtomMessageEncodingBindingElement](https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.mtommessageencodingbindingelement(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.channels.mtommessageencodingbindingelement(v=vs.110).aspx")
+		- Custom encoding - Custom message encoder can be created, but they must implement the MessageEncodingBindingElement class.  
 - Configure WCF services by using the API
 -  WCF routing and discovery features
 - Secure a WCF service
