@@ -423,7 +423,37 @@ Anything else listed additionally is based on my own observations. Links listed 
 				</services>
 			</system.serviceModel>
 -  configure bindings including WebSocket bindings
-	-  EXAMPLE
+	-  EXAMPLE 1
+
+			<?xml version="1.0" encoding="utf-8"?>
+			<configuration>
+			 <system.serviceModel>
+			  <bindings>
+			    <basicHttpBinding>
+			     <binding name="myBindingConfiguration1" closeTimeout="00:01:00" />
+			     <binding name="myBindingConfiguration2" closeTimeout="00:02:00" />
+			     <binding closeTimeout="00:03:00" />  <!—- Default binding for basicHttpBinding -->
+			    </basicHttpBinding>
+			     </bindings>
+			     <services>
+			      <service name="MyNamespace.myServiceType">
+			       <endpoint 
+			          address="myAddress" binding="basicHttpBinding" 
+			          bindingConfiguration="myBindingConfiguration1"
+			          contract="MyContract"  />
+			       <endpoint 
+			          address="myAddress2" binding="basicHttpBinding" 
+			          bindingConfiguration="myBindingConfiguration2"
+			          contract="MyContract" />
+			       <endpoint 
+			          address="myAddress3" binding="basicHttpBinding" 
+			          contract="MyContract" />
+			       </service>
+			      </services>
+			    </system.serviceModel>
+			</configuration>
+	- EXAMPLE 2 (with WebSockets)
+
 -  specify a service contract
 -  expose service metadata (XSDs, WSDL, and metadata exchange endpoint)
 	- EXAMPLE
