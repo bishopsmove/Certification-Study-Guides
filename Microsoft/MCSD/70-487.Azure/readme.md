@@ -494,17 +494,48 @@ Anything else listed additionally is based on my own observations. Links listed 
 			}
 -  WCF routing and discovery features
 - Secure a WCF service
-- Implement 
-	- message level security, 
-		- EXAMPLE
-	- implement transport level security
-		- EXAMPLE
--  implement certificates
--  design and implement multiple authentication modes
+	- Implement 
+		- message level security, 
+			- EXAMPLE
+		- implement transport level security
+			- EXAMPLE
+	-  implement certificates
+	-  design and implement multiple authentication modes
+		-  Delegation
+			-  Must have Kerberos enabled
+			-  EXAMPLE (with ChannelFactory implementation)
+
+					public class HelloService : IHelloService
+					{
+					    [OperationBehavior(Impersonation = ImpersonationOption.Required)]
+					    public string Hello(string message)
+					    {
+					        WindowsIdentity callerWindowsIdentity = ServiceSecurityContext.Current.WindowsIdentity;
+					        if (callerWindowsIdentity == null)
+					        {
+					            throw new InvalidOperationException
+					             ("The caller cannot be mapped to a Windows identity.");
+					        }
+					        using (callerWindowsIdentity.Impersonate())
+					        {
+					            EndpointAddress backendServiceAddress = new EndpointAddress("http://localhost:8000/ChannelApp");
+					            // Any binding that performs Windows authentication of the client can be used.
+					            ChannelFactory<IHelloService> channelFactory = new ChannelFactory<IHelloService>(new NetTcpBinding(), backendServiceAddress);
+					            IHelloService channel = channelFactory.CreateChannel();
+					            return channel.Hello(message);
+					        }
+					    }
+					}
 - Consume WCF services
 - Generate proxies by using SvcUtil
 -  generate proxies by creating a service reference
 -  create and implement channel factories
+	1. Establish a ChannelFactory instance utilizing:
+		1. EndpointAddress
+		2. Binding provider (built-in or custom)
+		3. ChannelFactory is typed to the ServiceContract interface
+	2. ChannelFactory.CreateChannel(), which is a new instance of the ServiceContract interface and functions as the client
+	3. Execute method from the client
 - Version a WCF service
 - Version different types of contracts (message, service, data)
 -  configure address, binding, and routing service versioning
