@@ -759,7 +759,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 		-  `msdeploy.exe -verb:sync -source:package={packageName} -dest:auto,computername={remoteServer} {MSDeployOperationSettingOptions}`
 		-  `msdeploy.exe -verb:sync -source:package=webServer -dest:auto,computername={remoteServer} {MSDeployOperationSettingOptions}`
 -  deploy a web application by using XCopy
--  automate a deployment from TFS or Build Server
+-  automate a deployment [from TFS or Build Server](https://www.asp.net/web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment "https://www.asp.net/web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment")
 - Choose a deployment strategy for an Azure web application
 - Perform an in-place upgrade and VIP swap
 -  configure an upgrade domain
