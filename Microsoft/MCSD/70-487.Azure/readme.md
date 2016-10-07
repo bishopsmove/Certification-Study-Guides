@@ -453,7 +453,28 @@ Anything else listed additionally is based on my own observations. Links listed 
 			    </system.serviceModel>
 			</configuration>
 	- EXAMPLE 2 (with WebSockets)
+		- [NetHttpBinding](https://msdn.microsoft.com/en-us/library/hh674273(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/hh674273(v=vs.110).aspx") (introduced with .Net4.5) was designed for consuming NTTP or WebSocket services and uses binary encoding by default.
 
+				<system.serviceModel>
+				    <services>
+				      <service name="WcfService1.Service1">
+				        <endpoint address=""
+				                  binding="netHttpBinding"
+				                  contract="WcfService1.IService1"/>
+				        <endpoint address="mex"
+				                  binding="mexHttpBinding"
+				                  contract="IMetadataExchange"/>
+				      </service>
+				    </services>
+				    <bindings>
+				      <netHttpBinding>
+				        <binding name="My_NetHttpBindingConfig">
+				          <webSocketSettings transportUsage="WhenDuplex"/>
+				        </binding>
+				      </netHttpBinding>
+				    </bindings>
+				    <!- ... --> 
+				  </system.serviceModel>
 -  specify a service contract
 -  expose service metadata (XSDs, WSDL, and metadata exchange endpoint)
 	- EXAMPLE
