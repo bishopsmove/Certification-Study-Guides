@@ -878,5 +878,5 @@ Anything else listed additionally is based on my own observations. Links listed 
 ####Preparation resources
 
 - ASP.NET Web Deployment using Visual Studio: Introduction
-- How to: Create a Web Deployment Package in Visual Studio
+- How to: [Create a Web Deployment Package in Visual Studio](http://www.developerhandbook.com/visual-studio/publish-website-to-iis-using-web-deploy/ "http://www.developerhandbook.com/visual-studio/publish-website-to-iis-using-web-deploy/") (Also applies to importing a publishing profile.)
 - Installing [NuGet](https://www.nuget.org/ "https://www.nuget.org/")
