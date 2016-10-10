@@ -188,7 +188,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 	-  use data service interceptors and service operators
 		-  EXAMPLE
 - Manipulate XML data structures
-	- Read filter, create, modify XML data structures
+	- Read filter, create, modify [XML data structures](http://www.c-sharpcorner.com/article/reading-and-writing-xml-in-C-Sharp/ "http://www.c-sharpcorner.com/article/reading-and-writing-xml-in-C-Sharp/")
 		- Utilize the Message class, which is a SOAP object wrapper.
 			- Message read access methods are implemented with XmlReader
 			- Message write access methods are implemented with XmlWriter
