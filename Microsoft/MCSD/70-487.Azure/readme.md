@@ -47,16 +47,17 @@ Anything else listed additionally is based on my own observations. Links listed 
 				- Entity Data Model Wizard: enables you to build out the conceptual model and utilize an existing data store
 				- Create Database Wizard: Opposite to the EDM Wizard, enables you to specify/modify the conceptual model and handles the implementation of the database instance, based on the conceptual model
 				- Update Model Wizard: Allows for modification of the conceptual model, the underlying storage model and the mappings between them.
-			- Mapping Strategies:
+			- [Mapping Strategies](https://blogs.msdn.microsoft.com/alexj/2009/04/14/tip-12-how-to-choose-an-inheritance-strategy/ "https://blogs.msdn.microsoft.com/alexj/2009/04/14/tip-12-how-to-choose-an-inheritance-strategy/"):
 				- Table Per Hierarchy (TPH)
-					- Better Performance
-					- Resulting Data is slightly denormalized
+					- Better Performance, as there are no joins
+					- Resulting Data is slightly denormalized, as there is only one table for that hierarchy.
 					- Adds Descriminator column to determine type of each record
 				- Table Per Type (TPT)
-					- Less performant
-					- Resulting data is properly normalized
+					- Less performant but more flexible
+					- Resulting data is properly normalized. There is one table for the base type and one table for each inheriting type.
 					- Performs a Join across multiple tables to retrieve a single record's worth of data
-				- Table Per Concrete Type (TPC) (Not likely to be covered in the test)
+				- Table Per Concrete Type (TPC)
+					- This a compromise over the previous two.
 				- Mixed Inheritance (MI) (Not likely to be covered in the test)
 			- DbContext vs ObjectContext
 				- ObjectContext (Legacy)
@@ -190,8 +191,9 @@ Anything else listed additionally is based on my own observations. Links listed 
 - Manipulate XML data structures
 	- Read filter, create, modify [XML data structures](http://www.c-sharpcorner.com/article/reading-and-writing-xml-in-C-Sharp/ "http://www.c-sharpcorner.com/article/reading-and-writing-xml-in-C-Sharp/")
 		- Utilize the Message class, which is a SOAP object wrapper.
-			- Message read access methods are implemented with XmlReader
-			- Message write access methods are implemented with XmlWriter
+			- Message read access methods are [implemented with XmlReader](https://msdn.microsoft.com/en-us/library/fx29c3yd(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/fx29c3yd(v=vs.110).aspx")
+			- Message write access methods are [implemented with XmlWriter](https://msdn.microsoft.com/en-us/library/zx8h06sz(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/zx8h06sz(v=vs.110).aspx")
+		- [Diffgram](https://msdn.microsoft.com/en-us/library/ms172088(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms172088(v=vs.110).aspx")
 	-  Manipulate XML data by using:
 		- XMLReader
 			- [EXAMPLE](https://msdn.microsoft.com/en-us/library/ms751474(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms751474(v=vs.110).aspx")
@@ -301,7 +303,7 @@ Anything else listed additionally is based on my own observations. Links listed 
 
 ####Preparation resources
 
-- Transaction isolation levels
+- [Transaction isolation levels](https://msdn.microsoft.com/en-us/library/ms709374(v=vs.85).aspx "https://msdn.microsoft.com/en-us/library/ms709374(v=vs.85).aspx")
 - WCF Data Services
 - XML documents and data
 	- DateTimeOffset manipulation ([DateTimeOffset.Parse()](https://msdn.microsoft.com/en-us/library/bb504692(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/bb504692(v=vs.110).aspx") vs [XmlConvert.ToDateTimeOffset()](https://msdn.microsoft.com/en-us/library/bb558713(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/bb558713(v=vs.110).aspx"))
@@ -626,7 +628,8 @@ Anything else listed additionally is based on my own observations. Links listed 
 				}
  
 -  activate and manage a service by using AppFabric
--  implement transactional services
+-  [implement transactional services](https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx")
+	-  Be sure to understand TransactionFlow behavior
 -  host services in an Azure worker role
 
 ####Preparation resources
