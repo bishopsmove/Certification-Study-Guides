@@ -629,7 +629,7 @@ Anything else listed additionally is based on my own observations. Links listed 
  
 -  activate and manage a service by using AppFabric
 -  [implement transactional services](https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx")
-	-  Be sure to understand TransactionFlow behavior
+	-  Be sure to understand [TransactionFlow behavior](https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowoption(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowoption(v=vs.110).aspx")
 -  host services in an Azure worker role
 
 ####Preparation resources
