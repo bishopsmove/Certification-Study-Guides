@@ -628,15 +628,16 @@ Anything else listed additionally is based on my own observations. Links listed 
 				}
  
 -  activate and manage a service by using AppFabric
--  [implement transactional services](https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx")
+-  [implement transactional services behavior](https://msdn.microsoft.com/en-us/library/ms751413(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms751413(v=vs.110).aspx")
+	-  [Transactional Flow Attribute](https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowattribute(v=vs.110).aspx")
 	-  Be sure to understand [TransactionFlow behavior](https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowoption(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/system.servicemodel.transactionflowoption(v=vs.110).aspx")
 -  host services in an Azure worker role
 
 ####Preparation resources
 
 - Windows Communication Foundation Services and WCF Data Services in Visual Studio
-- <bindings>
-- Forward-Compatible data contracts
+- [&lt;bindings&gt;](https://msdn.microsoft.com/en-us/library/dd699760(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/dd699760(v=vs.110).aspx")
+- [Forward-Compatible data contracts](https://msdn.microsoft.com/en-us/library/ms731083(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms731083(v=vs.110).aspx")
 - [Sessions, Instancing, and Concurrency](https://msdn.microsoft.com/en-us/library/ms731193(v=vs.110).aspx "https://msdn.microsoft.com/en-us/library/ms731193(v=vs.110).aspx")
 
 ##Creating and consuming Web API-based services (15-20%)
