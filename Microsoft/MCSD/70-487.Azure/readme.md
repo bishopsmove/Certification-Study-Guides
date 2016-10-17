@@ -843,6 +843,20 @@ Anything else listed additionally is based on my own observations. Links listed 
 		-  `al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk`
 -  deploy assemblies to the global assembly cache
 -  implement assembly versioning (only applies to assemblies with strong names)
+
+		<configuration>
+		    <runtime>
+		        <assemblyBinding xmlns="urn:schemas?microsoft?com:asm.v1">
+		            <dependentAssembly>
+		                <!--<codeBase version="1.0.0.0" 
+		                  href= "file:///c:\MyTestSite\lib\myAssembly.dll"/>-->
+
+			            <codeBase version="2.0.0.0"
+			                      href="http://www.litwareinc.com/myAssembly.dll"/>
+		            </dependentAssembly>
+		        </assemblyBinding>
+		    </runtime>
+		</configuration>
 -  create an assembly manifest
 -  configure assembly binding redirects (for example, from MVC4 to MVC5)
 	-  Example
@@ -856,8 +870,6 @@ Anything else listed additionally is based on my own observations. Links listed 
 			                              culture="neutral" />
 			            <bindingRedirect oldVersion="1.0.0.0"
 			                             newVersion="2.0.0.0"/>
-			            <codeBase version="2.0.0.0"
-			                      href="http://www.litwareinc.com/myAssembly.dll"/>
 			         </dependentAssembly>
 			      </assemblyBinding>
 			   </runtime>
